@@ -10,83 +10,7 @@
 %\fichetrue
 %%\fichefalse
 %
-%\proftrue
-%\proffalse
-%
-%\tdtrue
-%%\tdfalse
-%
-%\courstrue
-%\coursfalse
-%
-%\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-%\def\xxtete{Sciences Industrielles de l'Ingénieur}
-%
-%\def\classe{PSI$\star$ -- MP}
-%\def\xxnumpartie{Cycle 02}
-%\def\xxpartie{Modéliser les systèmes asservis dans le but de prévoir leur comportement}
-%
-%
-%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-%\def\xxchapitre{\hspace{.12cm} Stabilité des systèmes}
-%
-%
-%\def\xxtitreexo{Application}%Motorisation du moteur Haibike}
-%\def\xxsourceexo{\hspace{.2cm}}% \footnotesize{Patrick Dupas, \url{http://patrick.dupas.chez-alice.fr/}.}}
-%
-%
-%\def\xxposongletx{2}
-%\def\xxposonglettext{1.45}
-%\def\xxposonglety{20}
-%%\def\xxonglet{Part. 1 -- Ch. 3}
-%\def\xxonglet{Cycle 02}
-%
-%\def\xxactivite{Application}
-%\def\xxauteur{\textsl{X. Pessoles}}
-%
-%\def\xxcompetences{%
-%\textsl{%
-%\textbf{Savoirs et compétences :}\\
-%%Les sources sont associées par un \emph{hacheur série}. La détermination des grandeurs électriques associées à ce montage permet de conclure vis à vis du cahier des charges.
-%%\noindent \textbf{Résoudre :} à partir des modèles retenus :
-%%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%%\item choisir une méthode de résolution analytique, graphique, numérique;
-%%\item mettre en \oe{}uvre une méthode de résolution.
-%%\end{itemize}
-%%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%%\item \textit{Rés -- C1.1 :} Loi entrée sortie géométrique et cinématique -- Fermeture géométrique.
-%%\end{itemize}
-%%
-%%\noindent \textit{Mod2 -- C4.1 :} Représentation par schéma bloc.
-%}}
-%
-%\def\xxfigures{
-%%\includegraphics[width=.9\linewidth]{c-evolution}
-%}%figues de la page de garde
-%
-%
-%\def\xxpied{%
-%Cycle 02 -- Modéliser les SLCI dans le but de prévoir leur comportement\\
-%Chapitre 1 -- \xxactivite%
-%}
-%
-%\setcounter{secnumdepth}{5}
-%%---------------------------------------------------------------------------
-%
-%\usepackage{pgfplots}
-%\begin{document}
-%\def\pathfig{images}
-%%\chapterimage{png/Fond_Cin}
-%\input{style/new_pagegarde}
-%\vspace{4.5cm}
-%\pagestyle{fancy}
-%\thispagestyle{plain}
-%
-%\def\columnseprulecolor{\color{ocre}}
-%\setlength{\columnseprule}{0.4pt} 
-%
-%\def\pathfig{images}
-%
+%\proftr
 
 %%%% Paramétrage du TD %%%%
 \def\xxactivite{Application}
@@ -100,7 +24,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -124,9 +48,9 @@
 
 
 \iflivret
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \else
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \fi
 \setlength{\columnseprule}{.1pt}
 
@@ -136,7 +60,7 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
+\def\columnseprulecolor{\color{bleuxp}}
 \setlength{\columnseprule}{0.4pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -151,7 +75,7 @@
 \fi
 
 %\subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 On considère le schéma-blocs suivant. 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_01}
@@ -164,9 +88,9 @@ On donne ci-dessous la réponse indicielle pour $K_C=1$.
 \end{center}
 
 
-\subparagraph{}\textit{Justifier l'allure du diagramme du diagramme de Bode donné ci-dessous pour $K_C=1$.}
+\question{Justifier l'allure du diagramme du diagramme de Bode donné ci-dessous pour $K_C=1$.}
 
-\subparagraph{}\textit{Donner graphiquement les marges de phase et de gain pour $K_C=1$.}
+\question{Donner graphiquement les marges de phase et de gain pour $K_C=1$.}
 \ifprof
 \begin{center}
 \includegraphics[width=\linewidth]{cor_01}
@@ -176,7 +100,7 @@ On donne ci-dessous la réponse indicielle pour $K_C=1$.
 \fi
 
 
-\subparagraph{}\textit{Donner analytiquement les marges de phase et de gain pour $K_C=1$ (méthode).}
+\question{Donner analytiquement les marges de phase et de gain pour $K_C=1$ (méthode).}
 \ifprof
 \begin{corrige}
 \textbf{Calcul de la marge de gain}
@@ -207,7 +131,7 @@ On a $\omega=\SI{0,447}{rad.s^{-1}}$.
 \else
 \fi
 
-\subparagraph{}\textit{Le cahier des charges impose des marges de gain et de phase minimales de \SI{12}{dB} et 40\degres. Déterminer
+\question{Le cahier des charges impose des marges de gain et de phase minimales de \SI{12}{dB} et 40\degres. Déterminer
 la plus grande valeur de $K_C$ permettant de vérifier ce cahier des charges}
 
 

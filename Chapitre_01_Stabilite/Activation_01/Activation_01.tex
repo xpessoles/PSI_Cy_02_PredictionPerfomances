@@ -8,7 +8,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -50,17 +50,17 @@
 \fi
 
 \subsection*{Exercice 1 -- Réponse impulsionnelle (entrée Dirac)}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \ifprof
 \else
 \begin{center}
 \includegraphics[width=\linewidth]{fig_01}
 \end{center}
 \fi
-\subparagraph*{}\textit{Pour chaque cas déterminer si la réponse est celle d'un système stable, instable ou juste (quasi) stable.}
+\question{Pour chaque cas déterminer si la réponse est celle d'un système stable, instable ou juste (quasi) stable.}
 
 \subsection*{Exercice 2 -- Pôles de la FTBF}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \ifprof
 \else
 On donne les pôles des FTBF de plusieurs systèmes :
@@ -78,16 +78,16 @@ On donne les pôles des FTBF de plusieurs systèmes :
 \end{enumerate}
 \end{multicols}
 \fi
-\subparagraph*{}\textit{Pour chaque cas déterminer si la réponse est celle d'un système stable, instable ou juste  (quasi) stable.}
+\question{Pour chaque cas déterminer si la réponse est celle d'un système stable, instable ou juste  (quasi) stable.}
 
 
 
 
 
 \subsection*{Exercice 3 -- Applications du critère du Revers}
-\setcounter{exo}{0}
-\subparagraph*{}\textit{On donne ci-dessous les lieux de transferts de plusieurs {\text{FTBO}}. Déterminer, à l'aide du critère du Revers si les systèmes sont stables en BF.}
-\subparagraph*{}\textit{Pour les systèmes stables déterminer les marges de gain et de phase.}
+\setcounter{numques}{0}
+\question{On donne ci-dessous les lieux de transferts de plusieurs {\text{FTBO}}. Déterminer, à l'aide du critère du Revers si les systèmes sont stables en BF.}
+\question{Pour les systèmes stables déterminer les marges de gain et de phase.}
 
 %
 %
@@ -117,7 +117,7 @@ On donne les pôles des FTBF de plusieurs systèmes :
 %\newpage
 
 \subsection*{Exercice 4 -- Étude de la stabilité}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 
 
 
@@ -143,7 +143,7 @@ On donne le schéma bloc suivant :
 
 On a $K=1$, $\tau = 0,1$ et $G=20$. 
 %
-%\subparagraph{}\textit{Justifier la forme du schéma-blocs retenu pour modéliser la {\text{FTBO}} qui sera notée $H(p)$.}
+%\question{Justifier la forme du schéma-blocs retenu pour modéliser la {\text{FTBO}} qui sera notée $H(p)$.}
 %\ifprof
 %\begin{corrige}~\\
 %On a $H(p)=\dfrac{S(p)}{E(p)}
@@ -156,7 +156,7 @@ On a $K=1$, $\tau = 0,1$ et $G=20$.
 %\fi
 %
 %On considère le correcteur proportionnel $K=1$. 
-%\subparagraph{}\textit{Déterminer les valeurs de $G$ et de $\tau$ et en déduire $H(p)$.}
+%\question{Déterminer les valeurs de $G$ et de $\tau$ et en déduire $H(p)$.}
 %\ifprof
 %\begin{corrige}~\\
 %On a :
@@ -167,7 +167,7 @@ On a $K=1$, $\tau = 0,1$ et $G=20$.
 %\else
 %\fi
 
-\subparagraph{}\textit{Déterminer l'erreur statique et l'erreur de traînage.}
+\question{Déterminer l'erreur statique et l'erreur de traînage.}
 
 \ifprof
 \begin{corrige}
@@ -187,7 +187,7 @@ Erreur trainage (entrée rampe): $\varepsilon_t
 \fi
 
 
-\subparagraph{}\textit{Effectuer les tracés des diagrammes de Bode de la {\text{FTBO}}.}
+\question{Effectuer les tracés des diagrammes de Bode de la {\text{FTBO}}.}
 \ifprof
 \begin{corrige}~\\
 
@@ -203,14 +203,14 @@ Erreur trainage (entrée rampe): $\varepsilon_t
 %\SI{45}{\degree}$.
 
 
-\subparagraph{}\textit{Déterminer graphiquement les marges de gains et de phase.}
+\question{Déterminer graphiquement les marges de gains et de phase.}
 \ifprof
 \begin{corrige}~\\
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}\textit{Confirmer ces résultats par le calcul.}
+\question{Confirmer ces résultats par le calcul.}
 \ifprof
 \begin{corrige}~\\
 La phase ne coupe jamais l'axe des abscisses. Ainsi, La marge de gain n'est pas définie (elle est infinie).
@@ -245,7 +245,7 @@ La marge de phase est donc de 38,66\degres.
 \else
 \fi
 
-\subparagraph{}\textit{Conclure par rapport au cahier des charges.}
+\question{Conclure par rapport au cahier des charges.}
 \ifprof
 \begin{corrige}
 Le système ne sera pas stable vis-à-vis du cahier des charges.
@@ -278,9 +278,9 @@ Pour $\tau  = 0,005$
 %Déterminer le gain permettant de satisfaire le cahier des charges.
 %\end{obj}
 %
-%\subparagraph{}\textit{Déterminer graphiquement la valeur du correcteur $K$ à placer ans la chaîne directe, afin de respecter les critères de stabilité du cahier des charges.}
+%\question{Déterminer graphiquement la valeur du correcteur $K$ à placer ans la chaîne directe, afin de respecter les critères de stabilité du cahier des charges.}
 %
-%\subparagraph{}\textit{Déterminer analytiquement la valeur du correcteur $K$ à placer ans la chaîne directe, afin de respecter les critères de stabilité du cahier des charges.}
+%\question{Déterminer analytiquement la valeur du correcteur $K$ à placer ans la chaîne directe, afin de respecter les critères de stabilité du cahier des charges.}
 %\ifprof
 %\begin{corrige}
 %On a une phase de -135\degres pour $\omega=\SI{10}{rad.s^{-1}}$. Il faut donc déterminer $K$ tel que le gain soit nul en $\omega=\SI{10}{rad.s^{-1}}$.
@@ -292,7 +292,7 @@ Pour $\tau  = 0,005$
 %\else
 %\fi
 %
-%\subparagraph{}\textit{Quel sera alors le 1\ier dépassement pour la réponse indicielle du système ?}
+%\question{Quel sera alors le 1\ier dépassement pour la réponse indicielle du système ?}
 %\ifprof
 %\begin{corrige}
 %Dépassement de 23\%.
