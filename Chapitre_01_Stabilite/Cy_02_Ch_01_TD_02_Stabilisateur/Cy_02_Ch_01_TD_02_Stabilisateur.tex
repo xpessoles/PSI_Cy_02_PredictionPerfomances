@@ -10,7 +10,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 \item \textit{Mod2.C7.SF2} : déterminer les fonctions de transfert;
 \item \textit{Res2.C5} : stabilité des SLCI : équation caractéristique;
 \item \textit{Res2.C7} : stabilité des SLCI : marges de stabilité (de gain et de phase).	
@@ -30,9 +30,9 @@
 
 
 \iflivret
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \else
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \fi
 \setlength{\columnseprule}{.1pt}
 
@@ -41,7 +41,7 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
+\def\columnseprulecolor{\color{bleuxp}}
 \setlength{\columnseprule}{0.4pt} 
 
 
@@ -51,7 +51,7 @@
 \begin{multicols}{2}
 \fi
 
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \subsection*{Mise en situation}
 \ifprof
 \else
@@ -96,8 +96,7 @@ Dans cette étude, $A_i(p)=1$.
 
 \fi
 
-\subparagraph{}
-\textit{Avec $K_m A = 1$, calculer la fonction de transfert en boucle ouverte (FTBO) et la fonction de transfert
+\question{Avec $K_m A = 1$, calculer la fonction de transfert en boucle ouverte (FTBO) et la fonction de transfert
 en boucle fermée (FTBF) du schéma (modèle 1).}
 \ifprof
 \begin{corrige}
@@ -123,8 +122,7 @@ $\text{FTBF}(p)=A_i(p)\dfrac{K_P}{p\left(1+\tau_m p- K_D \right)+K_P}$.
 Dans un premier temps en mode pilotage, on s’intéresse au comportement de l’axe de tangage sans le filtre passe bas :
 $A_1(p)=1$.
 
-\subparagraph{}
-\textit{Quelle est la valeur maximale de $K_D$ pour que la commande de l’axe de tangage soit strictement
+\question{Quelle est la valeur maximale de $K_D$ pour que la commande de l’axe de tangage soit strictement
 stable ? Préciser le(s) critère(s) de stabilité appliqué(s).}
 \ifprof
 \begin{corrige}
@@ -149,8 +147,7 @@ Dans un premier temps on impose $K_P = \SI{10}{s^{-1}}$.
 %\end{center}
 
 
-\subparagraph{}
-\textit{Lorsque $A_i(p)=1$, le comportement est-il compatible avec l’exigence 1.1.1 «~Maîtriser les déplacements~» ? }
+\question{Lorsque $A_i(p)=1$, le comportement est-il compatible avec l’exigence 1.1.1 «~Maîtriser les déplacements~» ? }
 \ifprof
 \begin{corrige}
 On a : $\text{FTBF}(p)=
@@ -176,8 +173,7 @@ On considère ici que la consigne est constante donc $\varphi^*_a(t)=0$. Une per
 \end{center}
 \fi
 
-\subparagraph{}
-\textit{Avec le « modèle 2 » calculer la fonction de transfert $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$ qui lie la commande à la perturbation.}% Conseil de résolution : calculer $\varepsilon_1$ en fonction de $\text{Pe}(p)$, $\text{Com}(p)$ et des fonctions de transfert utiles, puis calculer $\varepsilon_2$ en fonction de $\varepsilon_1$ et des fonctions de transfert utiles, puis $\varepsilon_3$ en fonction de $\varepsilon_1$, $\varepsilon_2$ et des fonctions de transfert utiles et enfin en déduire $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$.}
+\question{Avec le « modèle 2 » calculer la fonction de transfert $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$ qui lie la commande à la perturbation.}% Conseil de résolution : calculer $\varepsilon_1$ en fonction de $\text{Pe}(p)$, $\text{Com}(p)$ et des fonctions de transfert utiles, puis calculer $\varepsilon_2$ en fonction de $\varepsilon_1$ et des fonctions de transfert utiles, puis $\varepsilon_3$ en fonction de $\varepsilon_1$, $\varepsilon_2$ et des fonctions de transfert utiles et enfin en déduire $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$.}
 \ifprof
 \begin{corrige}
 On a $\varepsilon_2(p) = -\text{Mes}\left( \varphi(p)\right) = -\varphi(p) = -\varepsilon_1(p)\dfrac{1}{p}$. 
@@ -196,8 +192,7 @@ On a donc $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}=\dfrac{\left(pK_D-
 \else
 \fi
 
-\subparagraph{\label{q28}}
-\textit{Avec le modèle 2 et une entrée $\text{Pe}(p)$ échelon unitaire, déterminer la limite quand t tend vers
+\question{\label{q28}Avec le modèle 2 et une entrée $\text{Pe}(p)$ échelon unitaire, déterminer la limite quand t tend vers
 l’infini de la commande : $\text{com}(t)$. Quel sens physique donner à ce résultat ?}
 \ifprof
 \begin{corrige}
@@ -212,8 +207,7 @@ $=\lim\limits_{p\to 0}p\text{Stab}(p)\text{Pe}(p)$
 \else
 \fi
 
-\subparagraph{}
-\textit{Avec le modèle 2 déterminer la FTBO $\dfrac{\text{Mes}\varphi(p)}{\varepsilon_2(p)}$ de ce schéma puis calculer la fonction de transfert liant la perturbation et la sortie $\text{Pert}(p)=\dfrac{\varphi(p)}{\text{Pe}(p)}$.}
+\question{Avec le modèle 2 déterminer la FTBO $\dfrac{\text{Mes}\varphi(p)}{\varepsilon_2(p)}$ de ce schéma puis calculer la fonction de transfert liant la perturbation et la sortie $\text{Pert}(p)=\dfrac{\varphi(p)}{\text{Pe}(p)}$.}
 \ifprof
 \begin{corrige}
 
@@ -241,8 +235,7 @@ $=\dfrac{1+\tau_m p}{p \left(1+\tau_m p\right)+\left(K_P-pK_D\right)AK_m}$.
 
 
 
-\subparagraph{}
-\textit{Déterminer la valeur lorsque $t$ tend vers l’infini de la réponse temporelle de ce système à une
+\question{Déterminer la valeur lorsque $t$ tend vers l’infini de la réponse temporelle de ce système à une
 perturbation de type échelon unitaire. Quel sens physique donner à ce résultat ?}
 \ifprof
 \begin{corrige}
@@ -299,8 +292,7 @@ exemple au vent qui crée un balancement de la GYRCAM) (ordonnée en degrés).
 \end{center}
 \fi
 
-\subparagraph{}
-\textit{Analyser ce tracé par rapport à l’exigence 1.1.2 « Perturbations » et justifier le
+\question{Analyser ce tracé par rapport à l’exigence 1.1.2 « Perturbations » et justifier le
 tracé de Com(t) relativement à Pe(t) en utilisant le résultat de la question~\ref{q28}.}
 \ifprof
 \begin{corrige}
@@ -318,8 +310,7 @@ Afin d’améliorer le comportement, un autre réglage a été effectué (voir f
 \fi
 
 
-\subparagraph{}
-\textit{Analyser comparativement ce nouveau tracé.}% Quel(s) réglage(s) ont été fait(s) ? Quelle est l’amélioration principale obtenue ?}
+\question{Analyser comparativement ce nouveau tracé.}% Quel(s) réglage(s) ont été fait(s) ? Quelle est l’amélioration principale obtenue ?}
 \ifprof
 \begin{corrige}
 Dans ce cas, les mouvements du porteur sont inférieurs à 0,1 degres (en valeur absolue).
@@ -329,8 +320,7 @@ Dans ce cas, les mouvements du porteur sont inférieurs à 0,1 degres (en valeur
 
 
 \subsection*{Synthèse}
-\subparagraph{}
-\textit{En utilisant la figure suivante, faire le bilan des travaux réalisés. Quel bilan faire au vu des écarts observés entre les performances obtenues et les performances modélisées. }
+\question{En utilisant la figure suivante, faire le bilan des travaux réalisés. Quel bilan faire au vu des écarts observés entre les performances obtenues et les performances modélisées. }
 \ifprof
 \begin{corrige}~\\
 \begin{center}

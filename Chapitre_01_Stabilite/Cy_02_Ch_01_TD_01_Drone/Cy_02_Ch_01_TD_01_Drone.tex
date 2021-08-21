@@ -10,7 +10,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -29,9 +29,9 @@
 
 
 \iflivret
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \else
-\input{../../style/new_pagegarde}
+\input{\repRel/Style/pagegarde_TD}
 \fi
 \setlength{\columnseprule}{.1pt}
 
@@ -41,15 +41,14 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
-\setlength{\columnseprule}{0.4pt} 
+\def\columnseprulecolor{\color{bleuxp}}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \begin{multicols}{2}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \section*{Présentation}
 \ifprof
 \else
@@ -101,7 +100,7 @@ maintenir le mini-drone en équilibre en vol stationnaire.
 On pose $\omega=\omega_0+\delta \omega$ et $u=u_0+\delta u$ où $\delta\omega$ et $\delta u$ représentent des petites variations de $\omega$ et $u$ autour du point de fonctionnement.
 \fi
 
-\subparagraph{}\textit{Déterminer l’équation stationnaire liant $\omega_0$ et $u_0$.}
+\question{Déterminer l’équation stationnaire liant $\omega_0$ et $u_0$.}
 \ifprof
 \begin{corrige}
 En vol stationnaire, dans les conditions idéales, la vitesse de rotation des hélices est constante; donc $\dfrac{\dd \omega(t)}{\dd t} = 0$. De plus, il n'y a pas de variation de la vitesse de rotation des hélices et donc pas de variation de la tension d'alimentation. En conséquence, $\delta u =0$ et $\delta \omega = 0$.
@@ -115,7 +114,7 @@ $\dfrac{1}{\tau}\omega_0 +k_q\omega_0^2 = \dfrac{k_v}{\tau}u_0$.
 \end{corrige}
 \else
 \fi
-\subparagraph{}\textit{Montrer que l'équation différentielle liant $\delta \omega$ et $\delta u$ est de la forme $\dfrac{\text{d}\delta \omega(t) }{\text{d}t}=-A\delta \omega(t) + B \delta u$. Exprimer $A$ et $B$ en fonction des paramètres $\tau$, $k_v$, $k_q$ et $\omega_0$.}
+\question{Montrer que l'équation différentielle liant $\delta \omega$ et $\delta u$ est de la forme $\dfrac{\text{d}\delta \omega(t) }{\text{d}t}=-A\delta \omega(t) + B \delta u$. Exprimer $A$ et $B$ en fonction des paramètres $\tau$, $k_v$, $k_q$ et $\omega_0$.}
 \ifprof
 \begin{corrige}
 On utilise le changement de variable proposé autour d'un point de fonctionnement et on a : 
@@ -150,7 +149,7 @@ Au final, $A=\dfrac{1}{\tau}+k_q2 \omega_0$ et $B=\dfrac{k_v}{\tau}$.
 On note $\Delta \Omega (p)$ la transformée de Laplace de $\delta \omega$ et $\Delta U(p)$ celle de $\delta u$.
 
 
-\subparagraph{}\textit{Calculer la fonction de transfert $\dfrac{\Delta{\Omega(s)}}{\Delta U(s)}$ du moteur. Donner l'expression de ses paramètres caractéristiques $K_m$ et $T_m$ en fonction des paramètres $\tau$, $k_v$, $k_q$ et $\omega_0$.}
+\question{Calculer la fonction de transfert $\dfrac{\Delta{\Omega(s)}}{\Delta U(s)}$ du moteur. Donner l'expression de ses paramètres caractéristiques $K_m$ et $T_m$ en fonction des paramètres $\tau$, $k_v$, $k_q$ et $\omega_0$.}
 \ifprof
 \begin{corrige}
 En utilisant la transformée de Laplace, on obtient $p\Delta\Omega(s) = -A\Delta\Omega(s) + B \Delta U(s)$ et donc 
@@ -166,7 +165,7 @@ En utilisant la transformée de Laplace, on obtient $p\Delta\Omega(s) = -A\Delta
 Dans le mouvement de déplacement vertical de direction $\vect{z}$ , les quatre moteurs tournent à la même vitesse et fournissent la même poussée $F=F_1=F_2=F_3=F_4$.
 La masse totale du drone est $m=\SI{240}{g}$. On prendra $g=\SI{9,81}{m.s^{-2}}$.
 \fi
-\subparagraph{}\textit{Calculer numériquement la poussée $F_0$ que doit exercer chacun des quatre moteurs pour maintenir l’appareil en vol stationnaire à l’altitude $z_0$ .}
+\question{Calculer numériquement la poussée $F_0$ que doit exercer chacun des quatre moteurs pour maintenir l’appareil en vol stationnaire à l’altitude $z_0$ .}
 \ifprof
 \begin{corrige}
 On a  $4 F_0 = mg$. 
@@ -184,7 +183,7 @@ La poussée $F$ varie avec $\omega^2$ . Des mesures réalisées sur un seul grou
 
 \fi
 
-\subparagraph{}\textit{Déterminer la fréquence de rotation $\omega_0$ des
+\question{Déterminer la fréquence de rotation $\omega_0$ des
 moteurs en vol stationnaire.}
 \ifprof
 \begin{corrige}
@@ -208,7 +207,7 @@ $\tau=\SI{125}{ms}$.
 \end{center}
 \fi
 
-\subparagraph{}\textit{Déterminer l'expression des coefficients $k_v$ et $k_q$ en fonction de $a$, $b$ et $\tau$. Préciser leur unité.}
+\question{Déterminer l'expression des coefficients $k_v$ et $k_q$ en fonction de $a$, $b$ et $\tau$. Préciser leur unité.}
 \ifprof
 \begin{corrige}
 Lorsque $\dfrac{\text{d}\omega(t)}{\text{d}(t)}=0$, on a  $u=a\omega0^2+b\omega_0$. Par ailleurs en régime stationnaire, on a $\dfrac{1}{\tau}\omega_0 +k_q\omega_0^2 = \dfrac{k_v}{\tau}u_0$. Il en résulte que 
@@ -244,7 +243,7 @@ $$ m\ddot{z} =4F-mg. $$
 \fi
 
 
-\subparagraph{}\textit{Déterminer la fonction de transfert $\dfrac{\Delta Z(p)}{\Delta F(p)}$ à partir de l'équation du principe fondamental de la dynamique. En déduire l'expression de la fonction de transfert en boucle ouverte. }
+\question{Déterminer la fonction de transfert $\dfrac{\Delta Z(p)}{\Delta F(p)}$ à partir de l'équation du principe fondamental de la dynamique. En déduire l'expression de la fonction de transfert en boucle ouverte. }
 
 \ifprof
 \begin{corrige}
@@ -272,7 +271,7 @@ La courbe de phase du diagramme de Bode de la fonction de transfert en boucle ou
 \fi
 
 
-\subparagraph{}\textit{Tracer le diagramme asymptotique de la courbe de gain avec le correcteur $T=\SI{0,2}{s}$ et $K=1$.
+\question{Tracer le diagramme asymptotique de la courbe de gain avec le correcteur $T=\SI{0,2}{s}$ et $K=1$.
 Préciser les pentes et les pulsations de brisure. Le diagramme sera tracé entre 1 et \SI{1000}{rad.s^{-1}}, le gain sera compris entre \SI{-120}{dB} et \SI{+10}{dB}.}
 
 \ifprof
@@ -292,7 +291,7 @@ Reste à tracer...
 
 \fi
 
-\subparagraph{}\textit{Justifier que pour $K=1$, on a $\omega_{c\SI{0}{dB}}=\SI{1,5}{rad.s^{-1}}$. En déduire graphiquement la marge de phase pour
+\question{Justifier que pour $K=1$, on a $\omega_{c\SI{0}{dB}}=\SI{1,5}{rad.s^{-1}}$. En déduire graphiquement la marge de phase pour
 $K=1$. Commenter.}
 \ifprof
 \begin{corrige}
@@ -305,7 +304,7 @@ $\Rightarrow \omega= \sqrt{2,5}\simeq \SI{1,58}{rad.s^{-1}} $.
 \fi
 
 
-\subparagraph{}\textit{Procéder au réglage du gain $K$ du correcteur afin d’assurer le respect du critère de stabilité du cahier des charges.}
+\question{Procéder au réglage du gain $K$ du correcteur afin d’assurer le respect du critère de stabilité du cahier des charges.}
 \ifprof
 \begin{corrige}
 En raisonnant analytiquement, on cherche la pulsation $\omega_{-145}$ pour laquelle la phase est de $-180\degres+35\degres = -145\degres$, soit $\arg{\text{FTBO}(j\omega)}=-145\degres$. (Résolution à faire à la calculatrice, sur Python ou autre. Il y asurement 2 solutions vu le profil de courbe de phase). 
@@ -315,7 +314,7 @@ On cherche ensuite $K$ tel que $\left| \text{FTBO}(j\omega_{-145}) \right| = 1$.
 \else
 \fi
 
-\subparagraph{}\textit{Le critère de précision du cahier des charges est-il vérifié ? Justifier.}
+\question{Le critère de précision du cahier des charges est-il vérifié ? Justifier.}
 \ifprof
 \begin{corrige}
 La boucle ouverte comporte 2 intégrateurs. L'écart statique est donc nul. Le cahier des charges est vérifié. 
@@ -337,14 +336,14 @@ complexe, pour la valeur du gain $K$ précédemment déterminée.
 \fi
 
 
-\subparagraph{}\textit{Repérer le(s) pôle(s) dominant(s) et donner sa (leur) valeur(s) numérique(s).}
+\question{Repérer le(s) pôle(s) dominant(s) et donner sa (leur) valeur(s) numérique(s).}
 \ifprof
 \begin{corrige}
 Les pôles dominants sont $P2\simeq -15$, $P3 \simeq -5 +8i$, $P4\simeq -5 -8i$. 
 \end{corrige}
 \else
 \fi
-\subparagraph{}\textit{À l’aide des droites d’iso-amortissement, indiquer la valeur du coefficient d’amortissement $\xi$ de la
+\question{À l’aide des droites d’iso-amortissement, indiquer la valeur du coefficient d’amortissement $\xi$ de la
 fonction de transfert du deuxième ordre pouvant modéliser l’asservissement vertical du drone lorsque
 l’on néglige les autres pôles par rapport à ces pôles dominants.}
 \ifprof
@@ -353,7 +352,7 @@ Dans ce cas, on ne prend que $P3$ et $P4$. $\xi=0,6$.
 \end{corrige}
 \else
 \fi
-\subparagraph{}\textit{En déduire la présence ou l’absence d’oscillations verticales du drone lors d’un décollage supposé
+\question{En déduire la présence ou l’absence d’oscillations verticales du drone lors d’un décollage supposé
 modélisé par un échelon d’amplitude 1 mètre. Le critère de stabilité est-il intégralement vérifié ?}
 \ifprof
 \begin{corrige}
@@ -361,14 +360,14 @@ Le coefficient d'amortissement est inférieur à 0,69. Il y aura donc des oscill
 \end{corrige}
 \else
 \fi
-\subparagraph{}\textit{Donner l’expression littérale des pôles d’un système du deuxième ordre de pulsation propre $\omega_n$ et de coefficient d’amortissement $\xi<1$. En déduire une estimation de la pulsation propre $\omega_n$ de la
+\question{Donner l’expression littérale des pôles d’un système du deuxième ordre de pulsation propre $\omega_n$ et de coefficient d’amortissement $\xi<1$. En déduire une estimation de la pulsation propre $\omega_n$ de la
 fonction de transfert approchée de l’asservissement vertical du drone.}
 \ifprof
 \begin{corrige}
 \end{corrige}
 \else
 \fi
-\subparagraph{}\textit{Vérifier si le critère de rapidité du cahier des charges est vérifié.}
+\question{Vérifier si le critère de rapidité du cahier des charges est vérifié.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -410,7 +409,7 @@ Pour éventuellement vous aider....
 
 %\end{document}
 %
-%\subparagraph{}\textit{}
+%\question{}
 %
 %
 %\begin{center}
