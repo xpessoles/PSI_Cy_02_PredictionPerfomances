@@ -10,7 +10,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %%\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %%\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %%\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -27,13 +27,8 @@
 \def\xxtitreexo{Cellule d'assemblage pour avion Falcon}
 \def\xxsourceexo{D'après concours E3A -- PSI 2015.}
 
+\input{\repRel/Style/pagegarde_TD}
 
-
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}
@@ -42,14 +37,14 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
+\def\columnseprulecolor{\color{bleuxp}}
 \setlength{\columnseprule}{0.4pt} 
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{multicols}{2}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \subsection*{Présentation}
 Le tronçon central du fuselage du Falcon 7X est assemblé par rivetage grâce à un robot 6 axes. Les rivets sont stockés dans des cassettes rangées verticalement. Un chariot de sélection se déplace verticalement pour déplacer une buse d'aspiration qui permettra d'acheminer les rivets contenus dans la cassette vers l'effecteur (robot). Le chariot fait l'objet de cette étude.
 
@@ -331,8 +326,7 @@ H_C (p)=\dfrac{\dfrac{\left(R+Lp\right)K_M}{K_C}}{(1+T_E p)(1+T_M p)}$.
 %\end{itemize}
 \fi
 
-\subparagraph{}
-\textit{Donner l'expression de $\varepsilon(p)$.}
+\question{Donner l'expression de $\varepsilon(p)$.}
 \ifprof
 \begin{corrige}~\\
 On raisonne par superposition :
@@ -369,8 +363,7 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \else
 \fi
 
-\subparagraph{}
-\textit{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=K_p$. Pouvait-on prévoir le résultat ?}
+\question{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=K_p$. Pouvait-on prévoir le résultat ?}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -378,8 +371,7 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \fi
 
 
-\subparagraph{}
-\textit{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
+\question{On souhaite déterminer l'erreur en position du système. Calculer l'écart statique pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -387,8 +379,7 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \fi
 
 
-\subparagraph{}
-\textit{On souhaite déterminer l'erreur en vitesse du système. Calculer l'erreur pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
+\question{On souhaite déterminer l'erreur en vitesse du système. Calculer l'erreur pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -396,8 +387,7 @@ $Y(p)=Y_1 (p)+Y_2 (p)$.
 \fi
 
 
-\subparagraph{}
-\textit{On souhaite déterminer l'erreur pour un entrée en position du système avec une perturbation de type rampe. Calculer l'erreur pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
+\question{On souhaite déterminer l'erreur pour un entrée en position du système avec une perturbation de type rampe. Calculer l'erreur pour $C(p)=\dfrac{K_i}{p}$. Pouvait-on prévoir le résultat ?}
 \ifprof
 \begin{corrige}
 \end{corrige}

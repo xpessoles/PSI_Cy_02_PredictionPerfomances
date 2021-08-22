@@ -9,7 +9,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -25,11 +25,8 @@
 \def\xxtitreexo{Fauteuil dynamique de cinéma}
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale-Supélec TSI 2015}}
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
+\input{\repRel/Style/pagegarde_TD}
+
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}
@@ -38,7 +35,7 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
+\def\columnseprulecolor{\color{bleuxp}}
 \setlength{\columnseprule}{0.4pt} 
 
 %%%%%%%%%%%%%%
@@ -139,7 +136,7 @@
 
 %\section{Fauteuil dynamique de cinéma}
 \section*{Présentation du système}
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 \ifprof
 \else
 Ce concept a été inventé au Canada en 2008, et s'est étendu à toute l'Amérique du Nord avant de traverser l'Atlantique pour proposer un cinéma dynamique avec une quantité d'effets spéciaux et spatiaux. Le fauteuil dynamique de cinéma est principalement destiné à l'industrie du divertissement et de la simulation.
@@ -433,7 +430,7 @@ performances attendues listées par le cahier des charges.
 %%fourni figure \ref{fig8}.
 %%
 %%
-%%\subparagraph{}\textit{À l'aide d'une fermeture géométrique, exprimer littéralement l'angle
+%%\question{À l'aide d'une fermeture géométrique, exprimer littéralement l'angle
 %%  \emph{$\theta$\textsubscript{d}} en fonction de l'angle
 %%  \emph{$\theta$\textsubscript{r}}. Mettre l'expression sous la forme :
 %%\[\cos\theta_{d}\left( E + F\cos\theta_{r} \right) + \sin\theta_{d}\left( G + F\sin\theta_{r} \right) = H + \left(I\cos\theta_{r} + J\sin\theta_{r} \right)\].}
@@ -451,7 +448,7 @@ performances attendues listées par le cahier des charges.
 %\end{center}
 %%\end{figure}
 %
-%\subparagraph{}\textit{Déterminer par linéarisation autour du point de fonctionnement
+%\question{Déterminer par linéarisation autour du point de fonctionnement
 %  \(\theta_{r} = 0\), la valeur numérique du gain dynamique
 %  \emph{K\textsubscript{c}} de la transformation de mouvement du
 %  dosseret.}
@@ -502,7 +499,7 @@ performances attendues listées par le cahier des charges.
 %obtenir une tension de \SI{5}{V} au niveau du comparateur de l'asservissement
 %de vitesse lorsque la fréquence de rotation du moteur est égale à $\SI{3000}{tr. min^{-1}}$.
 %
-%\subparagraph{}\textit{En tenant compte des informations précédentes, calculer la valeur
+%\question{En tenant compte des informations précédentes, calculer la valeur
 %  numérique de $c$ et de $K_\Omega$ (schéma-blocs précédent).}
 
 %\newpage
@@ -566,7 +563,7 @@ performances attendues listées par le cahier des charges.
 %
 %
 %
-%\subparagraph{}\textit{Pour chacun des deux modèles (initial et simplifié), quelle est la
+%\question{Pour chacun des deux modèles (initial et simplifié), quelle est la
 %  valeur finale de $\Omega(t)$ lorsque $i_c(t)$ est un
 %  échelon unitaire ? À l'aide de ces résultats et des relevés issus de
 %  la simulation dans le régime transitoire, conclure quant à la validité
@@ -618,7 +615,7 @@ $J=\SI{0,16e-3}{kg.m^{2}}$.
  \fi
  
 
-\subparagraph{}\textit{Exprimer la fonction de transfert de la boucle de vitesse
+\question{Exprimer la fonction de transfert de la boucle de vitesse
   \(H_{\Omega}\left( p \right) = \Omega(p)/U_{C\Omega}(p)\), lorsque
   \(C_{R}\left( p \right) = 0\). Le résultat sera mis sous une forme canonique.}
 
@@ -637,7 +634,7 @@ $H_{\Omega}(p)=\dfrac{\dfrac{1}{K_{\Omega}}\left( 1 + T_{1}p \right)}{\dfrac{T_{
 \else
 \fi
 
-\subparagraph{}\textit{$T_1$ étant égal à $J/f$, montrer alors que
+\question{$T_1$ étant égal à $J/f$, montrer alors que
   la fonction de transfert en boucle fermée peut se mettre sous la forme
   \(\dfrac{b}{\tau p + 1}\). Calculer les valeurs numériques des termes
   \emph{b} et \emph{$\tau$}.}
@@ -684,7 +681,7 @@ Autre solution : $b=\dfrac{1}{K_{\Omega}} = 20 \pi = \SI{62,8}{rad.s{-1}V^{-1}}$
 \else
 \fi
 
-\subparagraph{}\textit{En déduire, à l'aide de la figure précédente, $\theta(p)/C_R(p)$
+\question{En déduire, à l'aide de la figure précédente, $\theta(p)/C_R(p)$
   lorsque $\theta_C(p)=0$. Calculer ensuite la valeur finale
   de $\theta(t)$ lorsque $c_R(t)$ est un échelon unitaire. %*******
   Conclure quant à l'action, en régime permanent, du correcteur
@@ -729,7 +726,7 @@ position \label{fig14}}
 \fi
 
 
-\subparagraph{}\textit{Exprimer la fonction de transfert $\theta(p)/\theta_C(p)$.
+\question{Exprimer la fonction de transfert $\theta(p)/\theta_C(p)$.
   Déterminer ensuite la valeur numérique de $a$ pour avoir un facteur
   d'amortissement égal à $0,7$. Justifier le choix de ce facteur
   d'amortissement. (Pour ce calcul et les calculs suivants prendre $b =
@@ -748,7 +745,7 @@ En conséquence, ${a}=\dfrac{1}{4bc\tau\xi^2}=0,092$. (On prend $\xi=0,7$ car ce
 \else
 \fi
   
-%\subparagraph{}\textit{Tracer le diagramme de Bode de la fonction de le fonction de transfert en boucle ouverte. Quel que soit le résultat de la partie précédente, on prendra $a=\SI{0,1}{V}$.}
+%\question{Tracer le diagramme de Bode de la fonction de le fonction de transfert en boucle ouverte. Quel que soit le résultat de la partie précédente, on prendra $a=\SI{0,1}{V}$.}
 
 \subsection*{Analyse de la précision du système}
 \ifprof
@@ -766,7 +763,7 @@ sortie $\theta(t)$ et est définie par la variable $\mu(t) = \theta_C(t)-\theta(
 %\textbf{Indication : } l'erreur d'accélération est déterminée suite à une entrée de type
 %accélération ($\theta_C(t)=t^2\cdot \dfrac{u(t)}{2}$, $\theta_C(p)=\dfrac{1}{p^3}$.
 
-\subparagraph{}\textit{ Exprimer dans un premier temps $\mu(p)$ en fonction de
+\question{ Exprimer dans un premier temps $\mu(p)$ en fonction de
   $\theta_C(p)$, puis déterminer de façon littérale et numérique
   l'erreur de position $\mu_p$, l'erreur de trainage
   $\mu_v$ et l'erreur en accélération $\mu_a$.
@@ -809,14 +806,14 @@ charges fonctionnel.
 
 
 %
-%\subparagraph{}\textit{Déterminer, à partir du paramétrage donné figure \ref{fig8}, l'expression
+%\question{Déterminer, à partir du paramétrage donné figure \ref{fig8}, l'expression
 %  littérale au point $D$ (représentant le point de contact avec la tête du
 %  spectateur) du vecteur accélération
 %  \({\overrightarrow{\Gamma}}_{D \in \text{dosseret}/\text{chassis}}\). Calculer
 %  numériquement la norme de ce vecteur accélération au point $D$
 %  correspondant à la valeur maximale de \({\ddot{\theta}}_{d}\).}
 %  
-%\subparagraph{}\textit{Conclure quant au respect du nombre de g du cahier des charges (tableau \ref{tab:4}) vis-à-vis des accélérations simulées produites par le dosseret du
+%\question{Conclure quant au respect du nombre de g du cahier des charges (tableau \ref{tab:4}) vis-à-vis des accélérations simulées produites par le dosseret du
 %  siège dynamique de cinéma.}
 %  
 
@@ -899,7 +896,7 @@ pour la période transitoire, et ce lorsque la consigne vaut
 %\end{figure}
 \fi
 
-\subparagraph{}\textit{Conclure quant au respect du cahier des charges vis-à-vis des
+\question{Conclure quant au respect du cahier des charges vis-à-vis des
   accélérations produites par le dosseret du siège dynamique de cinéma.}
 \ifprof
 \begin{corrige}
@@ -953,7 +950,7 @@ $a =\SI{0,09}{V}$, $c =\SI{40}{rad^{-1}}$ et $d = \SI{0,016}{V.rad^{-1}.s}$.
 
 \fi
 
-\subparagraph{}\textit{En réutilisant éventuellement les calculs effectués aux questions \ref{q13} et \ref{q14} et en
+\question{En réutilisant éventuellement les calculs effectués aux questions \ref{q13} et \ref{q14} et en
   tenant compte des différences de réglage de retour vitesse et des
   différences d'inertie entre les deux motorisations, exprimer la valeur
   finale de $\theta_1(t)-\theta_2(t)$ lorsque la consigne $\theta_C(t)$ est respectivement
@@ -975,7 +972,7 @@ La figure \ref{fig20} représente le résultat d'une simulation de
 $\theta_1(t)-\theta_2(t)$ pour une
 consigne \(\theta_{C}\ \left( t \right) = \ \frac{t^{2}}{2}U(t)\)
 
-\subparagraph{}\textit{Conclure quant à l'erreur en accélération lors de la commande
+\question{Conclure quant à l'erreur en accélération lors de la commande
   simultanée.}
 \ifprof
 \begin{corrige}
@@ -1028,7 +1025,7 @@ fonction du temps \label{fig20}}
 %
 %\end{document}
 %
-%\subparagraph{}\textit{}
+%\question{}
 %\ifprof
 %\begin{corrige}
 %\end{corrige}

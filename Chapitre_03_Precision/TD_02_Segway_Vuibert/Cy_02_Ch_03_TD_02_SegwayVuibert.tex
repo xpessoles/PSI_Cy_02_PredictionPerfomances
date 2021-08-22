@@ -9,7 +9,7 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \vspace{-.4cm}
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\begin{itemize}[label=\ding{112},font=\color{bleuxp}] 
 %\item \textit{Mod3.C2 : } pôles dominants et réduction de l’ordre du modèle : principe, justification
 %\item \textit{Res2.C4 : } stabilité des SLCI : définition entrée bornée -- sortie bornée (EB -- SB)	
 %\item \textit{Res2.C5 : } stabilité des SLCI : équation caractéristique	
@@ -27,12 +27,7 @@
 %\includegraphics[width=.4\linewidth]{image1}
 }%figues de la page de garde
 
-
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
+\input{\repRel/Style/pagegarde_TD}
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}
@@ -41,12 +36,12 @@
 
 \vspace{4.5cm}
 
-\def\columnseprulecolor{\color{ocre}}
+\def\columnseprulecolor{\color{bleuxp}}
 \setlength{\columnseprule}{0.4pt} 
 
 %%%%%%%%%%%%%%
 
-\setcounter{exo}{0}
+\setcounter{numques}{0}
 
 \begin{multicols}{2}
 
@@ -120,7 +115,7 @@ Les équations (simplifiées) caractérisant les différents sous-systèmes sont
 
 
 
-\subparagraph{}\textit{Déterminer, à l'aide des équations de chaque constituant, les fonctions de transfert de chaque bloc du schéma-blocs.}% de la figure \ref{ex_segway_SB}.}
+\question{Déterminer, à l'aide des équations de chaque constituant, les fonctions de transfert de chaque bloc du schéma-blocs.}% de la figure \ref{ex_segway_SB}.}
 
 \begin{center}%\begin{figure}[!ht]
 %\includegraphics[width=.7\textwidth]{schema_bloc.png}
@@ -128,26 +123,26 @@ Les équations (simplifiées) caractérisant les différents sous-systèmes sont
 \textit{Schéma-blocs du Segway\textregistered.} \label{ex_segway_SB}
 \end{center}%\end{figure}[!ht]
 
-\subparagraph{}\textit{Mettre la fonction de transfert du chariot $H(p)$ sous la forme canonique $H(p)=\frac{K_1}{\frac{p^2}{\omega_1^2}-1}$. On prendra pour la suite $K_1=\SI{0.12}{rad. N.m^{-1}}$ et $\omega_1=\SI{4.1}{rad. s^{-1}}$.}
+\question{Mettre la fonction de transfert du chariot $H(p)$ sous la forme canonique $H(p)=\frac{K_1}{\frac{p^2}{\omega_1^2}-1}$. On prendra pour la suite $K_1=\SI{0.12}{rad. N.m^{-1}}$ et $\omega_1=\SI{4.1}{rad. s^{-1}}$.}
 
-\subparagraph{}\textit{Justifier que le chariot seul est un système instable.}
+\question{Justifier que le chariot seul est un système instable.}
 
 \section*{Paramétrer la FTBO}
 
 On prend $F(p)=\frac{\num{0.12}}{1+\num{0.23} p + \num{0.026} p^2}$ et $K_C=5,47$ (permettant de garantir la marge de  \SI{-135}{\degree}) .
 
 %%
-%%\subparagraph{}\textit{Déterminer la Fonction de Transfert en Boucle Ouverte du système $\textrm{FTBO}(p)=\frac{\Psi(p)}{\varepsilon(p)} = C(p)F(p)$ où l'on précisera $F(p)$ en fonction des paramètres $K_m$, $K_1$, $\omega_1$, $k_v$ et $k_p$.}
-%%\subparagraph{}\textit{Pour pouvoir appliquer le critère du revers, il faut que la FTBO ne possède que des pôles à partie réelle négative. Quelle condition doit-on avoir sur les coefficients de $F(p)$ ? Y a-t-il d'autres conditions à respecter pour que le système ainsi asservi soit stable de façon absolue (sans vérifier si les valeurs des marges sont suffisantes) si on prend $C(p)=1$ ?}
+%%\question{Déterminer la Fonction de Transfert en Boucle Ouverte du système $\textrm{FTBO}(p)=\frac{\Psi(p)}{\varepsilon(p)} = C(p)F(p)$ où l'on précisera $F(p)$ en fonction des paramètres $K_m$, $K_1$, $\omega_1$, $k_v$ et $k_p$.}
+%%\question{Pour pouvoir appliquer le critère du revers, il faut que la FTBO ne possède que des pôles à partie réelle négative. Quelle condition doit-on avoir sur les coefficients de $F(p)$ ? Y a-t-il d'autres conditions à respecter pour que le système ainsi asservi soit stable de façon absolue (sans vérifier si les valeurs des marges sont suffisantes) si on prend $C(p)=1$ ?}
 %%Les paramètres $k_v$ et $k_p$ sont choisis de manière à assurer, non seulement la stabilité du système, mais aussi sa rapidité.
-%%\subparagraph{}\textit{\`A partir de l'expression de $F(p)$, déterminer les paramètres $k_v$ et $k_p$ permettant d'assurer une rapidité optimale en boucle ouverte en prenant une pulsation $\omega_0=\num{1.5} \omega_1$. }
+%%\question{\`A partir de l'expression de $F(p)$, déterminer les paramètres $k_v$ et $k_p$ permettant d'assurer une rapidité optimale en boucle ouverte en prenant une pulsation $\omega_0=\num{1.5} \omega_1$. }
 %%Dans la suite, la fonction $F(p)$ utilisée sera la suivante $F(p)=\frac{\num{0.12}}{1+\num{0.23} p + \num{0.026} p^2}$.
 
 %%On choisit un correcteur proportionnel $C(p)=K_c$.
 
-%%\subparagraph{}\textit{Déterminer analytiquement la pulsation et le gain correspondant à une phase de \SI{-135}{\degree}. Que dire de la marge de gain en fonction de la valeur de $K_c$.}
+%%\question{Déterminer analytiquement la pulsation et le gain correspondant à une phase de \SI{-135}{\degree}. Que dire de la marge de gain en fonction de la valeur de $K_c$.}
 
-%%\subparagraph{}\textit{En déduire la valeur à prendre pour $K_c$ de manière à respecter le cahier des charges vis-à-vis de la stabilité (marge de phase).}
+%%\question{En déduire la valeur à prendre pour $K_c$ de manière à respecter le cahier des charges vis-à-vis de la stabilité (marge de phase).}
 
 
 \subsection*{Caractériser les performances du système complet}
@@ -156,7 +151,7 @@ Afin d'assurer l'asservissement, la régulation d'inclinaison du Segway\textregi
 
 
 
-\subparagraph{}\textit{Déterminer la fonction de transfert $H_r(p)=\frac{\Psi(p)}{\alpha(p)}$.}
+\question{Déterminer la fonction de transfert $H_r(p)=\frac{\Psi(p)}{\alpha(p)}$.}
 
 \begin{center}%\begin{figure}[!ht]
 %\includegraphics[width=.7\textwidth]{bode.png}
@@ -165,14 +160,14 @@ Afin d'assurer l'asservissement, la régulation d'inclinaison du Segway\textregi
 \textit{Diagrammes de Bode de la FTBO corrigée.} \label{ex_Segway_bode}
 \end{center}%\end{figure}[!ht]
 
-\subparagraph{}\textit{Calculer l'inclinaison $\psi$ du châssis en régime permanent, lorsque la perturbation $\alpha$ est un échelon d'amplitude $\alpha_0=\SI{20}{\degree}$ pour le correcteur $K_c$ défini précédemment. Le cahier des charges est-il satisfait ?}
+\question{Calculer l'inclinaison $\psi$ du châssis en régime permanent, lorsque la perturbation $\alpha$ est un échelon d'amplitude $\alpha_0=\SI{20}{\degree}$ pour le correcteur $K_c$ défini précédemment. Le cahier des charges est-il satisfait ?}
 
-\subparagraph{}\textit{On utilise alors un correcteur proportionnel intégral de la forme $C(p)=K_i \frac{1+T_i p}{T_i p}$ (le réglage d'un tel correcteur sera vu dans un chapitre ultérieur) avec $K_i=\num{31.7}$ et $T_i=\SI{0.93}{s}$. Justifier que ce correcteur améliore la robustesse ainsi que la précision.}
+\question{On utilise alors un correcteur proportionnel intégral de la forme $C(p)=K_i \frac{1+T_i p}{T_i p}$ (le réglage d'un tel correcteur sera vu dans un chapitre ultérieur) avec $K_i=\num{31.7}$ et $T_i=\SI{0.93}{s}$. Justifier que ce correcteur améliore la robustesse ainsi que la précision.}
 
 Les diagrammes de Bode de la nouvelle FTBO sont donnés sur la figure suivante.% \ref{ex_Segway_bode}.
 
 
-\subparagraph{}\textit{Vérifier que la stabilité est toujours respectée avec ce réglage de correcteur.}
+\question{Vérifier que la stabilité est toujours respectée avec ce réglage de correcteur.}
 
 
 
@@ -226,7 +221,7 @@ correspond à l'évolution de l'angle $\chi(t)$ au cours du temps pour une consi
 
 %\end{document}
 %
-%\subparagraph{}\textit{}
+%\question{}
 %\ifprof
 %\begin{corrige}
 %\end{corrige}
