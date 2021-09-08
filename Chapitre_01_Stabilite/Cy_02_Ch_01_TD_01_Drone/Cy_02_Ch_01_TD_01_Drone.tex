@@ -46,8 +46,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 
 
-
+\ifprof
+\else
 \begin{multicols}{2}
+\fi
 \setcounter{numques}{0}
 \section*{Présentation}
 \ifprof
@@ -114,6 +116,7 @@ $\dfrac{1}{\tau}\omega_0 +k_q\omega_0^2 = \dfrac{k_v}{\tau}u_0$.
 \end{corrige}
 \else
 \fi
+
 \question{Montrer que l'équation différentielle liant $\delta \omega$ et $\delta u$ est de la forme $\dfrac{\text{d}\delta \omega(t) }{\text{d}t}=-A\delta \omega(t) + B \delta u$. Exprimer $A$ et $B$ en fonction des paramètres $\tau$, $k_v$, $k_q$ et $\omega_0$.}
 \ifprof
 \begin{corrige}
@@ -165,6 +168,8 @@ En utilisant la transformée de Laplace, on obtient $p\Delta\Omega(s) = -A\Delta
 Dans le mouvement de déplacement vertical de direction $\vect{z}$ , les quatre moteurs tournent à la même vitesse et fournissent la même poussée $F=F_1=F_2=F_3=F_4$.
 La masse totale du drone est $m=\SI{240}{g}$. On prendra $g=\SI{9,81}{m.s^{-2}}$.
 \fi
+
+
 \question{Calculer numériquement la poussée $F_0$ que doit exercer chacun des quatre moteurs pour maintenir l’appareil en vol stationnaire à l’altitude $z_0$ .}
 \ifprof
 \begin{corrige}
@@ -343,6 +348,7 @@ Les pôles dominants sont $P2\simeq -15$, $P3 \simeq -5 +8i$, $P4\simeq -5 -8i$.
 \end{corrige}
 \else
 \fi
+
 \question{À l’aide des droites d’iso-amortissement, indiquer la valeur du coefficient d’amortissement $\xi$ de la
 fonction de transfert du deuxième ordre pouvant modéliser l’asservissement vertical du drone lorsque
 l’on néglige les autres pôles par rapport à ces pôles dominants.}
@@ -352,6 +358,7 @@ Dans ce cas, on ne prend que $P3$ et $P4$. $\xi=0,6$.
 \end{corrige}
 \else
 \fi
+
 \question{En déduire la présence ou l’absence d’oscillations verticales du drone lors d’un décollage supposé
 modélisé par un échelon d’amplitude 1 mètre. Le critère de stabilité est-il intégralement vérifié ?}
 \ifprof
@@ -360,6 +367,7 @@ Le coefficient d'amortissement est inférieur à 0,69. Il y aura donc des oscill
 \end{corrige}
 \else
 \fi
+
 \question{Donner l’expression littérale des pôles d’un système du deuxième ordre de pulsation propre $\omega_n$ et de coefficient d’amortissement $\xi<1$. En déduire une estimation de la pulsation propre $\omega_n$ de la
 fonction de transfert approchée de l’asservissement vertical du drone.}
 \ifprof
@@ -367,6 +375,7 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 \end{corrige}
 \else
 \fi
+
 \question{Vérifier si le critère de rapidité du cahier des charges est vérifié.}
 \ifprof
 \begin{corrige}
@@ -385,7 +394,11 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 %\begin{multicols}
 %\newpage
 
-
+\ifprof
+\else
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+\footnotesize
 Pour éventuellement vous aider....
 \begin{enumerate}
 \item $-\dfrac{1}{\tau}\omega_0 - k_q \omega_0^2 + \dfrac{k_v}{\tau}u_0=0$;
@@ -404,9 +417,16 @@ Pour éventuellement vous aider....
 \item $\quad$
 \item $p=-\xi\omega_n \pm j\omega_n \sqrt{1-\xi^2}$. $\omega_n\simeq \SI{8,33}{rad.s^{-1}}$
 \item $t_{5\%}\simeq \SI{0,61}{ s}$. 
-\end{enumerate}
+\end{enumerate} \\ \hline
+\end{tabular}
+\normalsize
+\fi
+
+\ifprof
+\else
 \end{multicols}
 
+\fi
 %\end{document}
 %
 %\question{}

@@ -112,7 +112,7 @@ $\arg\left(\text{FTBO}(j\omega)\right) $ $= -\arg\left( j\omega\right)-\arg\left
 $\arg\left(\text{FTBO}(j\omega_{180})\right)=-180\degres$ 
 $\Leftrightarrow - 90 - \arctan \left( 10 \omega \right) - \arctan \left( 0,5 \omega \right) = -180$
 
-\begin{python}
+\begin{lstlisting}
 import math as m
 from pylab import *
 from scipy.optimize import bisect 
@@ -122,7 +122,7 @@ def f(x):
     return res
 
 zero1 = bisect(f, .1, 10)
-\end{python}
+\end{lstlisting}
 On a $\omega=\SI{0,447}{rad.s^{-1}}$.
 %$\Leftrightarrow - \arctan \left( 10 \omega \right) - \arctan \left( 0,5 \omega \right) = -90$
 \end{itemize}
