@@ -148,7 +148,7 @@ La fonction de transfert en boucle ouverte est donnée par $H_{BO}=\dfrac{R(p)}{
 
 La fonction de transfert en boucle fermée est donnée par : $H_{BF}=\dfrac{S(p)}{E(p)}=\dfrac{F(p)}{1+F(p)G(p)}=\dfrac{F(p)}{1+H_{BO}(p)}$. 
 
-\begin{defi}\textbf{ -- Équation caractéristique}
+\begin{defi}\textbf{ --  \, Équation caractéristique}
 Soit $H(p)=\dfrac{N(p)}{D(p)}$ une fonction de transfert. On appelle $D(p)=0$ l'équation caractéristique de la fonction de transfert. Ainsi les racines de $D(p)$ correspondent aux pôles de $H(p)$.
 \end{defi}
 
@@ -159,7 +159,7 @@ Pour un système d'ordre supérieur à 3 il devient délicat d'obtenir analytiqu
 
 Il existe un critère algébrique permettant de vérifier la stabilité d'un système : il s'agit de critère de Routh. Pour un système bouclé, ce critère utilise le dénominateur de la BF. Ce critère n'étant pas au programme, on pourra rechercher dans la littérature des articles s'y référant si nécessaire. 
 
-\subsection{Critère graphique de stabilité : le critère du Revers}
+\subsection{Critère << graphique >> de stabilité : le critère du Revers}
  On a vu que l'équation caractéristique était de la forme $1+H_{BO}(p)=0$. Ainsi, Pour cela revient à résoudre l'équation $H_{BO}(p)=-1$. Ainsi dans le plan complexe, le point $(-1;0)$ permet d'avoir une information sur la stabilité. En terme de module et de phase, ce nombre complexe a un module de 1 (gain dB nul) et une phase de $-180\degres$.
  
 \begin{resultat}
@@ -176,6 +176,13 @@ $$
 En notant $\omega_{-180\degres}$ la pulsation pour laquelle la phase vaut $-180\degres$ et $\omega_{0\text{dB}}$ la pulsation pour laquelle le gain est nul.
 \end{resultat}
  
+ \begin{rem}
+ Je parle ici de critère graphique car l'interprétation graphique dans le diagramme de Bode est directe.
+ \end{rem}
+ 
+\begin{resultat}
+Condition (non suffisante ...) de stabilité : les pôles de la FTBO doivent être à partie réelle positive.
+\end{resultat}
  
 \begin{center}
 \includegraphics[width=.9\linewidth]{marges}
@@ -196,7 +203,7 @@ Pour tenir compte des écarts entre le modèle et le système réel, on est amen
 \begin{minipage}[c]{.58\linewidth}
 \begin{defi}\textbf{ -- Marge de phase}
 
-La marge de phase est définie telle que $M_\varphi= \SI{180}{\degree} + \arg\left(\text{FTBO}(j\omega_{co})\right)$ où $\omega_{co}$ est la pulsation de coupure pour laquelle $20\log|\text{FTBO}\left(j\omega_{co}\right)|=\SI{0}{dB}$.
+La marge de phase est définie telle que $M_\varphi= \SI{180}{\degree} + \arg\left(\text{FTBO}(j\omega_{\text{c0}})\right)$ où $\omega_{\text{c0}}$ est la pulsation de coupure pour laquelle $20\log|\text{FTBO}\left(j\omega_{\text{c0}}\right)|=\SI{0}{dB}$.
 \end{defi}
 
 \begin{defi}\textbf{ -- Marge de gain}
