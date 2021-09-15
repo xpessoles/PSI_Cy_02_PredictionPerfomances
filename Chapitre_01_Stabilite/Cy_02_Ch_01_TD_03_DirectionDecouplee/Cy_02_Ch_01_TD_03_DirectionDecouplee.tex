@@ -130,7 +130,7 @@ respectivement aux couples $C_c \vec{x_v}$ et $C_{\text{mv}} \vec{x_v}$.
 \subsection*{Analyse et optimisation du comportement l'unité de pilotage}
 
 
-Le schéma-blocs retenu est celui de la \autoref{fig_11} où le retour est unitaire. On note $\varepsilon_{\theta v}(t)$ l'écart entre la consigne et l'angle obtenu, et $\varepsilon_{c v}(t)$ le
+Le schéma-blocs retenu est celui de la \autoref{fig_11} où le retour est unitaire. On note $\varepsilon_{\theta v}(t)$ l'écart entre la consigne et l'angle obtenu, et $\varepsilon_{\text{c v}}(t)$ le
 couple résultant des couples $C_c$ et $C_{\text{mv}}$.
 
 
@@ -178,7 +178,7 @@ $\text{FTBO}_{v1}(p)$ du système corrigé, avec le correcteur PI, telle que $\t
 $\text{FTBO}_{v1}(p)=K_{BOv1}\dfrac{1}{p^2}H(p)$ pour
 laquelle on précisera les expressions de $K_{\text{BOv1}}$ et de $H(p)$ avec $H(p)$ de gain statique unitaire.
 Déduire de cette expression, en le justifiant, si $\alpha$ doit être supérieur ou inférieur à 1 pour que le
-système puisse être stabilisé.}
+système puisse être stabilisé (on pourra donner l'allure du diagramme de phase en fonction de la valeur de $\alpha$).}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -186,6 +186,14 @@ système puisse être stabilisé.}
 \fi
 
 On commence par choisir $\tau_i$ en prenant $\alpha=10$ et on cherche à optimiser $K_i$.
+
+%%
+On donne 
+$\varepsilon_{\theta v}(p)= 
+\dfrac{\theta_{\text{v\_ref}}(p)}{1+\text{FTBO}_{\text{v1}}(p)}
+-\dfrac{g_v}{p\left(1+\tau_v p\right)}
+\cdot \dfrac{C_C(p)}{1+\text{FTBO}_{v1}(p)}$.
+%%
 
 
 \question{\label{q9} Quelle doit être la valeur minimale de $K_i$ pour que les critères de précision soient satisfaits ?}
@@ -195,10 +203,10 @@ On commence par choisir $\tau_i$ en prenant $\alpha=10$ et on cherche à optimis
 \else
 \fi
 
-On donne sur le cahier réponses le tracé du lieu de transfert de la $\text{FTBO}_{v1}(p)$ dans le plan de Bode, pour $K_i = \SI{0,5}{V.rad^{-1}}$.
+On donne \autoref{dr_01} le tracé du lieu de transfert de la $\text{FTBO}_{v1}(p)$ dans le plan de Bode, pour $K_i = \SI{0,5}{V.rad^{-1}}$.
 
 
-\question{\label{q10} Tracer sur le lieu de transfert de la $\text{FTBO}_{v1}(p)$ du cahier réponses, les diagrammes asymptotiques
+\question{\label{q10} Tracer sur le lieu de transfert de la $\text{FTBO}_{v1}(p)$, les diagrammes asymptotiques
 dans le plan de Bode. On justifiera rapidement les valeurs particulières de pentes, de pulsations,
 de gains et de phases.}
 \ifprof
@@ -297,7 +305,7 @@ peut ainsi se mettre sous la forme $\text{FTBO}_{v2}(p)=K_{\text{BOv2}} \dfrac{1
 \fi
 
 
-On donne sur le cahier réponses le tracé du lieu de transfert de la $\text{FTBO}_{v2}(p)$ dans le plan de Bode, pour $K_i = \SI{1,2}{V.rad^{-1}}$ (valeur évitant des calculs trop longs), réglé avec
+On donne sur la \autoref{dr_02} le tracé du lieu de transfert de la $\text{FTBO}_{v2}(p)$ dans le plan de Bode, pour $K_i = \SI{1,2}{V.rad^{-1}}$ (valeur évitant des calculs trop longs), réglé avec
 $\beta = 1/6$ (non justifié) et pour $\alpha= 10$ (valeur choisie précédemment).
 
 \question{\label{q17} Justifier que $\beta$ doit être inférieur à 1 pour que la correction par retour tachymétrique soit efficace vis-à-vis du critère de pulsation de coupure à \SI{0}{dB}.}
@@ -368,11 +376,26 @@ conséquences sur les performances du système ?}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{ann_01}
+%\includegraphics[width=\linewidth]{ann_01}
 
-\caption{Diagramme des exigences \label{ann_01}}
+\includegraphics[width=.8\linewidth]{req_01}
+
+\caption{Exigences \label{ann_01}}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=.65\linewidth]{dr_01}
+
+\caption{Lieu de transfert de $\text{FTBO}_{\text{v1}}(p)$ \label{dr_01}}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.65\linewidth]{dr_02}
+
+\caption{Lieu de transfert de $\text{FTBO}_{\text{v2}}(p)$ \label{dr_02}}
+\end{figure}
 
 %
 %
