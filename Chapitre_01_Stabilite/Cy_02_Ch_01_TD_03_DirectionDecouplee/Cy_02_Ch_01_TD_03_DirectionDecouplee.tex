@@ -44,6 +44,8 @@
 \setlength{\columnseprule}{0.4pt} 
 
 
+\textbf{Mise en garde : il se peut qu'il manque des informations ou que certaines soient superflues. N'hésitez pas à m'en faire part !!}
+
 \ifprof
 \else
 \begin{multicols}{2}
@@ -289,7 +291,7 @@ reprenant chaque critère. On rappelle que l'on a choisi $\alpha=10$.}
 %Q15
 \question{\label{q15} Exprimer la fonction de transfert en boucle fermée  $T_{\text{vrt}}(p)$ définie par
 $\Omega_v(p)=T_{\text{vrt}}(p) \varepsilon_{\text{cv}}(p)$ en
-fonction de $T_v (p)$ et $K_{\text{rt}}$. Mettre alors $T_{\text{vrt}}(p)$ sous la forme $T_{{vrt}}(p)=T_v(p)\beta \dfrac{1+\tau_v p}{1+\beta \tau_v p}$ pour laquelle, on précisera l'expression de $\beta$ en fonction de $K_{\text{rt}}$ et du gain statique $g_v$.}% défini à la question \autoref{q6}.}
+fonction de $T_v (p)$ et $K_{\text{rt}}$. Mettre alors $T_{\text{vrt}}(p)$ sous la forme $T_{\text{vrt}}(p)=T_v(p)\beta \dfrac{1+\tau_v p}{1+\beta \tau_v p}$ pour laquelle, on précisera l'expression de $\beta$ en fonction de $K_{\text{rt}}$ et du gain statique $g_v$.}% défini à la question \autoref{q6}.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -336,7 +338,8 @@ grande, permettant de satisfaire les deux critères de temps de réponse et de d
 \fi
 
 \question{\label{q19} Déterminer par lecture du lieu de transfert dans le plan de Bode de $\text{FTBO}_{v2}(p)$, tracé dans les
-conditions de la question \ref{q17}, la valeur de $K_i$ permettant d'obtenir la marge de phase trouvée à la
+conditions de la question 11,%\ref{q17},
+ la valeur de $K_i$ permettant d'obtenir la marge de phase trouvée à la
 question précédente.}
 \ifprof
 \begin{corrige}
@@ -364,9 +367,30 @@ conséquences sur les performances du système ?}
 \else
 \fi
 
-
-
-
+\footnotesize
+\noindent\begin{tabular}{|p{.95\linewidth}|}
+\hline
+Éléments de corrigé :
+\begin{enumerate}
+\item .
+\item $K_{\text{BOv1}}=\dfrac{K_iK_{\text{mv}}g_v}{\alpha \tau_v}$ et $H(p)=\dfrac{1+\alpha \tau_v p}{1+ \tau_v p}$, $\alpha>1$.
+\item $K_i \geq 10\alpha \dfrac{\tau_v}{K_{\text{mv}}}$ et $K_i\geq \SI{25}{V.rad^{-1}}$.
+\item .
+\item $K_i = \SI{5}{V.rad^{-1}}$.
+\item .
+\item .
+\item .
+\item $\beta = \dfrac{1}{1+K_{\text{rt}}g_v}$
+\item $K_{\text{BOv2}}=\dfrac{K_i K_{\text{mv}}\beta g_v}{\alpha \tau_v}$. %10
+\item .
+\item $M_{\varphi}=58\degres$.
+\item $K_i = \SI{120}{V.rad^{-1}}$. %13
+\item .
+\item .
+\end{enumerate}\\
+\hline
+\end{tabular}
+\normalsize
 
 \ifprof
 \else
