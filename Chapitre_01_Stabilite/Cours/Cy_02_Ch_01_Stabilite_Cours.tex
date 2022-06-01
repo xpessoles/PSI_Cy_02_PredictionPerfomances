@@ -7,7 +7,7 @@
 \tdfalse
 \courstrue
 
-\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
 \def\xxchapitre{\hspace{.12cm} Stabilité des systèmes}
 
 \def\xxcompetences{%
@@ -56,7 +56,7 @@ soumise à l'accélération de la pesanteur se déplaçant (avec un peu de dissi
 \includegraphics[width=.9\linewidth]{fig_stabilite}
 \end{center}
 \subsection{Premières définitions}
-\begin{defi}\textbf{ -- Définition intuitive}
+\begin{defi}{Définition intuitive}
 
 Un système est asymptotiquement stable si et seulement si : 
 \begin{itemize}
@@ -73,7 +73,7 @@ La stabilité d'un système \textbf{est indépendante} de la nature de l'entrée
 
 Pour simplifier les calculs, une première approche pourra être d'utiliser la réponse impulsionnelle. 
 \end{rem}
-\begin{defi}
+\begin{defi}{}
 En conséquence, on peut considérer qu'un système est asymptotiquement stable si et seulement si sa réponse impulsionnelle tend vers zéro au cours du temps.
 \end{defi}
 
@@ -116,7 +116,7 @@ Par extension on peut observer dans le plan complexe les pôles de fonctions de 
 \textit{Allure de la réponse à l’impulsion de Dirac selon la position des pôles de la FTBF d’un système \cite{2}.}
 \end{center}
 
-\begin{defi}\textbf{ -- À retenir}
+\begin{defi}{À retenir}
 Un système est asymptotiquement stable si et seulement si tous les pôles de sa fonction de transfert (\textbf{en boucle fermée}) sont à partie réelle strictement négative. 
 
 \end{defi}
@@ -148,7 +148,7 @@ La fonction de transfert en boucle ouverte est donnée par $H_{BO}=\dfrac{R(p)}{
 
 La fonction de transfert en boucle fermée est donnée par : $H_{BF}=\dfrac{S(p)}{E(p)}=\dfrac{F(p)}{1+F(p)G(p)}=\dfrac{F(p)}{1+H_{BO}(p)}$. 
 
-\begin{defi}\textbf{ --  \, Équation caractéristique}
+\begin{defi}{Équation caractéristique}
 Soit $H(p)=\dfrac{N(p)}{D(p)}$ une fonction de transfert. On appelle $D(p)=0$ l'équation caractéristique de la fonction de transfert. Ainsi les racines de $D(p)$ correspondent aux pôles de $H(p)$.
 \end{defi}
 
@@ -201,12 +201,12 @@ Pour tenir compte des écarts entre le modèle et le système réel, on est amen
 \end{resultat}
 
 \begin{minipage}[c]{.58\linewidth}
-\begin{defi}\textbf{ -- Marge de phase}
+\begin{defi}{Marge de phase}
 
 La marge de phase est définie telle que $M_\varphi= \SI{180}{\degree} + \arg\left(\text{FTBO}(j\omega_{\text{c0}})\right)$ où $\omega_{\text{c0}}$ est la pulsation de coupure pour laquelle $20\log|\text{FTBO}\left(j\omega_{\text{c0}}\right)|=\SI{0}{dB}$.
 \end{defi}
 
-\begin{defi}\textbf{ -- Marge de gain}
+\begin{defi}{Marge de gain}
 La marge de gain est définie telle
 que $M_G = -20\log|\text{FTBO} (j\omega_{\varphi 180})|$
 où $\omega_{\varphi 180}$ est la pulsation pour laquelle $\arg(\text{FTBO}(j\omega_{ \varphi 180}))= -\SI{180}{\degres}$.
