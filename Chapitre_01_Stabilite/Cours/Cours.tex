@@ -3,7 +3,7 @@
 
 \chapter{Rappels sur la modélisation des systèmes asservis}
 
-\marginnote[5cm]{
+\marginnote[1cm]{
 \UPSTIcompetence[2]{C1-01}
 \UPSTIcompetence[2]{C2-03}
 }
@@ -17,9 +17,9 @@ Illustrons cette définition de façon très intuitive à travers l'exemple suiv
 soumise à l'accélération de la pesanteur se déplaçant (avec un peu de dissipation
 énergétique) sur une surface donnée.
 
-\begin{center}
+\begin{figure}[H]
 \includegraphics[width=.9\linewidth]{fig_stabilite}
-\end{center}
+\end{figure}
 \subsection{Premières définitions}
 \begin{defi}[Définition intuitive]
 
@@ -66,20 +66,21 @@ $e^{-at} \sin \omega t$.
 
 Ainsi, on peut observer la réponse temporelle des systèmes en fonction du positionnement des pôles dans le plan complexe. 
 
-\begin{center}
-\includegraphics[width=14cm]{poles_simple_double}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{poles_simple_double}
 
-\textit{Représentation d'un système à pôle simple et à pôles conjugués dans le plan complexe -- Réponse indicielle}
-\end{center}
+\caption{Représentation d'un système à pôle simple et à pôles conjugués dans le plan complexe -- Réponse indicielle}
+\end{figure}
 
 \subsection{Position des pôles dans le plan complexe}
 Par extension on peut observer dans le plan complexe les pôles de fonctions de transfert et leur indicielle associée.
 
-\begin{center}
+\begin{figure}[H]
 \includegraphics[width=\linewidth]{plan_complexe_fm}
 
-\textit{Allure de la réponse à l’impulsion de Dirac selon la position des pôles de la FTBF d’un système \cite{2}.}
-\end{center}
+\caption{Allure de la réponse à l’impulsion de Dirac selon la position des pôles de la FTBF d’un système \cite{mathurin_stabilite}.}
+\end{figure}
 
 \begin{defi}{À retenir}
 Un système est asymptotiquement stable si et seulement si tous les pôles de sa fonction de transfert (\textbf{en boucle fermée}) sont à partie réelle strictement négative. 
@@ -103,15 +104,14 @@ Il est possible de représenter les performances des systèmes asservis en utili
 \subsection{Lorsque la BO commence à pointer le bout de son nez...}
 
 
-Soit le schéma-blocs suivant : 
 
-\begin{center}
-\includegraphics{Schema_1_entree_F_R}
-\end{center}
+La fonction de transfert en boucle ouverte est donnée par $H_{BO}(p)=\dfrac{R(p)}{\varepsilon(p)}=F(p)G(p)$. 
 
-La fonction de transfert en boucle ouverte est donnée par $H_{BO}=\dfrac{R(p)}{\varepsilon(p)}=F(p)G(p)$. 
+\begin{marginfigure}
+\includegraphics[width=5cm]{Schema_1_entree_F_R}
+\end{marginfigure}
 
-La fonction de transfert en boucle fermée est donnée par : $H_{BF}=\dfrac{S(p)}{E(p)}=\dfrac{F(p)}{1+F(p)G(p)}=\dfrac{F(p)}{1+H_{BO}(p)}$. 
+La fonction de transfert en boucle fermée est donnée par : $H_{BF}(p)=\dfrac{S(p)}{E(p)}=\dfrac{F(p)}{1+F(p)G(p)}=\dfrac{F(p)}{1+H_{BO}(p)}$. 
 
 \begin{defi}[Équation caractéristique]
 Soit $H(p)=\dfrac{N(p)}{D(p)}$ une fonction de transfert. On appelle $D(p)=0$ l'équation caractéristique de la fonction de transfert. Ainsi les racines de $D(p)$ correspondent aux pôles de $H(p)$.
@@ -125,6 +125,11 @@ Pour un système d'ordre supérieur à 3 il devient délicat d'obtenir analytiqu
 Il existe un critère algébrique permettant de vérifier la stabilité d'un système : il s'agit de critère de Routh. Pour un système bouclé, ce critère utilise le dénominateur de la BF. Ce critère n'étant pas au programme, on pourra rechercher dans la littérature des articles s'y référant si nécessaire. 
 
 \subsection{Critère << graphique >> de stabilité : le critère du Revers}
+
+\marginnote{
+On parle ici de critère graphique car l'interprétation graphique dans le diagramme de Bode est directe.
+}
+ 
  On a vu que l'équation caractéristique était de la forme $1+H_{BO}(p)=0$. Ainsi, Pour cela revient à résoudre l'équation $H_{BO}(p)=-1$. Ainsi dans le plan complexe, le point $(-1;0)$ permet d'avoir une information sur la stabilité. En terme de module et de phase, ce nombre complexe a un module de 1 (gain dB nul) et une phase de $-180\degres$.
  
 \begin{resultat}
@@ -141,9 +146,6 @@ $$
 En notant $\omega_{-180\degres}$ la pulsation pour laquelle la phase vaut $-180\degres$ et $\omega_{0\text{dB}}$ la pulsation pour laquelle le gain est nul.
 \end{resultat}
  
- \begin{remarque}
- Je parle ici de critère graphique car l'interprétation graphique dans le diagramme de Bode est directe.
- \end{remarque}
  
 \begin{resultat}
 Condition (non suffisante ...) de stabilité : les pôles de la FTBO doivent être à partie réelle positive.
@@ -165,23 +167,19 @@ Pour tenir compte des écarts entre le modèle et le système réel, on est amen
 \end{itemize}
 \end{resultat}
 
-\begin{minipage}[c]{.58\linewidth}
-\begin{defi}{Marge de phase}
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{marges_fm}
+\end{marginfigure}
 
+\begin{defi}[Marge de phase]
 La marge de phase est définie telle que $M_\varphi= \SI{180}{\degree} + \arg\left(\text{FTBO}(j\omega_{\text{c0}})\right)$ où $\omega_{\text{c0}}$ est la pulsation de coupure pour laquelle $20\log|\text{FTBO}\left(j\omega_{\text{c0}}\right)|=\SI{0}{dB}$.
 \end{defi}
 
-\begin{defi}{Marge de gain}
-La marge de gain est définie telle
-que $M_G = -20\log|\text{FTBO} (j\omega_{\varphi 180})|$
+\begin{defi}[Marge de gain]
+La marge de gain est définie telle que $M_G = -20\log|\text{FTBO} (j\omega_{\varphi 180})|$
 où $\omega_{\varphi 180}$ est la pulsation pour laquelle $\arg(\text{FTBO}(j\omega_{ \varphi 180}))= -\SI{180}{\degres}$.
 \end{defi}
-\end{minipage}\hfill
-\begin{minipage}[c]{.4\linewidth}
-\begin{center}
-\includegraphics[width=.8\linewidth]{marges_fm}
-\end{center}
-\end{minipage}
+
 
 
  
@@ -199,8 +197,9 @@ La nécessité d'avoir recours à des marges de stabilité apparaît notamment l
 \end{itemize}
 
 \begin{thebibliography}{2}
-   \bibitem[1]{ref1} Frédéric Mazet, {Cours d'automatique de deuxième année, Lycée Dumont Durville, Toulon.}
-      \bibitem[2]{ref2} Florestan Mathurin, {Stabilité des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
-
+   \bibitem{mazet_autom} 
+   Frédéric Mazet, Cours d'automatique de deuxième année, Lycée Dumont Durville, Toulon.
+   \bibitem{mathurin_stabilite} 
+   Florestan Mathurin, Stabilité des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.
 \end{thebibliography}
 
