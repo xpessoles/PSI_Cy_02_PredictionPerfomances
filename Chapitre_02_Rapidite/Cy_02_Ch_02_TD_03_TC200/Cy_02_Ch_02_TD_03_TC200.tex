@@ -9,7 +9,7 @@ Base TC200 Tecdron -- \ifprof Corrigé \else Sujet \fi}
 \fi
 \setcounter{question}{0}
 
-\marginnote{Centrale Supelect TSI 2021.}
+\marginnote{Centrale Supelec TSI 2021.}
 \marginnote{\UPSTIcompetence[2]{C2-03}}
 \begin{marginfigure}
 \centering
@@ -46,11 +46,24 @@ Vérifier les exigences de la boucle de vitesse en termes de stabilité, précis
 \end{obj}
 
 
+\footnotesize
+\begin{table*}
+\begin{tabular}{lp{11cm}p{4cm}}
+\hline
+\textbf{Exigence} & \textbf{Critère} & \textbf{Performance attendue} \\
+\hline
+\multirow{2}{*}{Précision} & 
+Erreur relative en régime permanent $\mu_{v\infty}$ pour une consigne en échelon d'amplitude $\omega_{mc0}$ & $\mu_{v\infty} < \SI{1}{\%}$ \\
+& Erreur en vitesse en régime permanent $\Delta \omega_{\infty}$ pour une consigne en rampe telle que $\omega_{mc}(t)  = at$ & $\leq \SI{100}{rad.s^{-1}}$ pour une pente de $\SI{1800}{rad.s^{-1}}$ \\
+Rapidité & Temps de réponse à $\SI{5}{\%}$ & $\indice{t}{5\%} < \SI{180}{ms}$ \\
+\multirow{2}{*}{Stabilité} & Dépassement maximal & $\leq \SI{10}{\%}$  \\
+& Marge de phase & $\geq 60\degres$  \\
+\hline
+\end{tabular}
+\end{table*}
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_04}
-%\textit{}
-\end{center}
+\normalsize
+
 
 La boucle de courant étant supposée parfaite, le schéma-blocs de la figure suivante correspond à l’asservissement de
 vitesse d’une des motorisations. Le modèle est considéré pour le moment non perturbé, c’est-à-dire $C_f(p)=0$.
