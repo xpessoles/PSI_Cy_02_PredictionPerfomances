@@ -1,23 +1,59 @@
-%\setchapterimage{fig_00_bis}
-\chapter*{TD \arabic{cptTD} \\ 
-Base TC200 Tecdron -- \ifprof Corrigé \else Sujet \fi}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{TD 02 \ifprof-- Corrigé \else \fi }
+\def\xxauteur{\textsl{Xavier Pessoles}}
+%\fancyfoot[C]{\rule{12cm}{.5pt}}
+%\renewcommand{\footrulewidth}{0.2pt}
+%\fancyfoot[C]{\footnotesize{\bfseries \thepage}}
+%\fancyfoot[L]{ 
+%\begin{minipage}[c]{.4\linewidth}
+%\noindent\footnotesize{{\xxauteur}}
+%\end{minipage}}
 
-\addcontentsline{toc}{section}{Colle \arabic{cptTD} : Base TC200 Tecdron -- \ifprof Corrigé \else Sujet \fi}
 
-\iflivret \stepcounter{cptTD} \else
-\ifprof  \stepcounter{cptTD} \else \fi
+\def\xxnumchapitre{Chapitre 5 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Rapidité des systèmes}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.4cm}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item C2-03 : Déterminer les performances d'un système asservi.
+\end{itemize}
+}}
+
+
+\def\xxfigures{
+\includegraphics[width=.4\linewidth]{fig_01}
+}%figues de la page de garde
+
+\def\xxtitreexo{Base TC200 Tecdron}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Centrale Supelect TSI 2021}}
+
+\input{\repRel/Style/pagegarde_TD}
+
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\vspace{4.5cm}
+
+\def\columnseprulecolor{\color{bleuxp}}
+\setlength{\columnseprule}{0.4pt} 
+%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
 \fi
-\setcounter{question}{0}
-
-\marginnote{Centrale Supelect TSI 2021.}
-\marginnote{\UPSTIcompetence[2]{C2-03}}
-\begin{marginfigure}
-\centering
-\includegraphics[width=\linewidth]{fig_01}
-\end{marginfigure}
 
 
-
+\setcounter{numques}{0}
 \subsection*{Mise en situation}
 
 Dans l’industrie, il est désormais possible d’associer des tâches robotisées et des tâches manuelles. Après l’essor
@@ -25,16 +61,14 @@ des robots collaboratifs, Tecdron, entreprise Française basée à La Rochelle, 
 TC200, capable de recevoir différents types de bras robotisés -- dont des bras collaboratifs -- mais aussi de
 se déplacer de manière autonome dans un environnement industriel complexe composé de robots et d’humains.
 
-Les figures ci-après donnent la structure du robot étudié. 
+Les figures ci-dessous donnent la structure du robot étudié. 
 
-\begin{marginfigure}
-\centering
+\begin{center}
 \includegraphics[width=\linewidth]{fig_02}
 
 \includegraphics[width=\linewidth]{fig_03}
-\end{marginfigure}
-
-
+%\textit{}
+\end{center}
 
 
 \subsection*{Validation de l'asservissement du moteur}
@@ -52,7 +86,7 @@ Vérifier les exigences de la boucle de vitesse en termes de stabilité, précis
 %\textit{}
 \end{center}
 
-La boucle de courant étant supposée parfaite, le schéma-blocs de la figure suivante correspond à l’asservissement de
+La boucle de courant étant supposée parfaite, le schéma bloc de la figure 19 correspond à l’asservissement de
 vitesse d’une des motorisations. Le modèle est considéré pour le moment non perturbé, c’est-à-dire $C_f(p)=0$.
 
 \begin{center}
@@ -62,16 +96,8 @@ vitesse d’une des motorisations. Le modèle est considéré pour le moment non
 
 
 \begin{center}
-\begin{tabular}{lll}
-\hline
-\textbf{Fonction de transfert} & \textbf{Expression} & \textbf{Valeur} \\
-\hline
-Codeur et sa carte de traitement & $\indice{K}{cod}$ & $\SI{0,2}{V.s.rad^{-1}}$ \\
-Constante de couple & $K_t$ & $\SI{0,09}{N.m.A^{-1}}$ \\
-Correteur de type proportionnel & $C_2(p) = K_2 $ &  \\
-Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}{eq} = 1,5\times 10^{-2} \si{kg.m^2}$ \\
-\hline
-\end{tabular}
+\includegraphics[width=\linewidth]{fig_06}
+%\textit{}
 \end{center}
 
 \question{Déterminer la fonction de transfert en boucle fermée $\indice{H}{BF}(p)=\dfrac{\Omega_m(p)}{\Omega_{mc}(p)}$ pour $C_f(p)=0$.}
@@ -147,6 +173,12 @@ On donne les diagrammes de Bode de la FTBO.
 %\item ...
 %\item ...
 %\end{enumerate}
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
 
 
 

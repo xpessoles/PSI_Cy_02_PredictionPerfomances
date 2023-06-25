@@ -1,15 +1,17 @@
 \setchapterimage{Fond_SLCI.png}
 \setchapterpreamble[u]{\margintoc}
+\setcounter{chapter}{1}
 
-\chapter{Rappels sur la modélisation des systèmes asservis}
+\chapter{Rappels sur la détermination des performancs des systèmes asservis}
 
 \marginnote[1cm]{
 \UPSTIcompetence[2]{C1-01}
 \UPSTIcompetence[2]{C2-03}
 }
 
-\section{Notion de stabilité}
-\subsection{Représentation graphique \cite{1}}
+\section{Stabilité des systèmes asservis}
+\subsection{Notion de stabilité}
+\subsubsection{Représentation graphique \cite{1}}
 Un état d'équilibre d'un système est asymptotiquement stable lorsque le système, écarté de sa position d'équilibre par une
 cause extérieure, finit par retrouver ce même état d'équilibre après disparition de la
 cause.
@@ -20,7 +22,7 @@ soumise à l'accélération de la pesanteur se déplaçant (avec un peu de dissi
 \begin{figure}[H]
 \includegraphics[width=.9\linewidth]{fig_stabilite}
 \end{figure}
-\subsection{Premières définitions}
+\subsubsection{Premières définitions}
 \begin{defi}[Définition intuitive]
 
 Un système est asymptotiquement stable si et seulement si : 
@@ -42,7 +44,7 @@ Pour simplifier les calculs, une première approche pourra être d'utiliser la r
 En conséquence, on peut considérer qu'un système est asymptotiquement stable si et seulement si sa réponse impulsionnelle tend vers zéro au cours du temps.
 \end{defi}
 
-\subsection{Étude des pôles de la fonction de transfert}
+\subsubsection{Étude des pôles de la fonction de transfert}
 Dans le cas général la fonction de transfert d'un système peut se mettre sous la forme :
 $$
 H(p)=\dfrac{b_mp^m + b_{m-1}p^{m-1}+...+b_1p+b_0}{a_np^n + a_{n-1}p^{n-1}+...+a_1p+a_0} \quad \text{avec } n\geq m.
@@ -73,7 +75,7 @@ Ainsi, on peut observer la réponse temporelle des systèmes en fonction du posi
 \caption{Représentation d'un système à pôle simple et à pôles conjugués dans le plan complexe -- Réponse indicielle}
 \end{figure}
 
-\subsection{Position des pôles dans le plan complexe}
+\subsubsection{Position des pôles dans le plan complexe}
 Par extension on peut observer dans le plan complexe les pôles de fonctions de transfert et leur indicielle associée.
 
 \begin{figure}[H]
@@ -94,14 +96,14 @@ Un système est asymptotiquement stable si et seulement si tous les pôles de sa
 \end{itemize}
 \end{remarque}
 
-\subsection{Pôles dominants \cite{1}}
+\subsubsection{Pôles dominants \cite{1}}
 Lors de l’étude d’un système, on se contente en général de ne prendre en compte que les pôles les plus influents. Ces pôles sont appelés les pôles dominants. Pour un système asymptotiquement stable, ce sont ceux qui sont le plus proche de l’axe des imaginaires, puisque ce sont eux qui induisent des modes qui disparaissent dans le temps le plus lentement.
 
-\subsection{Caractéristiques dans le lieu de pôles}
+\subsubsection{Caractéristiques dans le lieu de pôles}
 Il est possible de représenter les performances des systèmes asservis en utilisant le lieu des pôles dans le plan complexe \cite{1}. 
 
-\section{Marges de stabilité}
-\subsection{Lorsque la BO commence à pointer le bout de son nez...}
+\subsection{Marges de stabilité}
+\subsubsection{Lorsque la BO commence à pointer le bout de son nez...}
 
 
 
@@ -119,12 +121,12 @@ Soit $H(p)=\dfrac{N(p)}{D(p)}$ une fonction de transfert. On appelle $D(p)=0$ l'
 
 \textbf{Pour un système bouclé, l'équation caractéristique sera $1+H_{BO}(p)=0$.}
 
-\subsection{Critère algébrique de stabilité : le critère de Routh}
+\subsubsection{Critère algébrique de stabilité : le critère de Routh}
 Pour un système d'ordre supérieur à 3 il devient délicat d'obtenir analytiquement (ou numériquement) les racines du polynôme et ainsi conclure sur la stabilité à partir du signe des parties réelles. 
 
 Il existe un critère algébrique permettant de vérifier la stabilité d'un système : il s'agit de critère de Routh. Pour un système bouclé, ce critère utilise le dénominateur de la BF. Ce critère n'étant pas au programme, on pourra rechercher dans la littérature des articles s'y référant si nécessaire. 
 
-\subsection{Critère << graphique >> de stabilité : le critère du Revers}
+\subsubsection{Critère << graphique >> de stabilité : le critère du Revers}
 
 \marginnote{
 On parle ici de critère graphique car l'interprétation graphique dans le diagramme de Bode est directe.
@@ -154,7 +156,7 @@ Condition (non suffisante ...) de stabilité : les pôles de la FTBO doivent êt
 \begin{center}
 \includegraphics[width=.9\linewidth]{marges}
 \end{center} 
-\subsection{Vers le système réel...}
+\subsubsection{Vers le système réel...}
 
 Le résultat donné ci-dessus est un résultat théorique dans le sens ou le diagramme de Bode de la boucle ouverte du système réel aura un écart avec le diagramme de Bode du système modélisé. 
 
