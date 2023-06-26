@@ -53,11 +53,11 @@ Dans cette étude, $A_i(p)=1$.
 %\item $A_2(p)= \dfrac{1}{\tau_0 p} \left( 1-e^{-\tau_0 p}\right)$ : fonction rampe de pente 1 pour rejoindre la valeur finale;
 %\item $A_3(p)= \dfrac{1}{1+\tau_0 p}$ : fonction de transfert du  premier ordre de constante de temps $\tau$ (filtre passe-bas).
 %\end{itemize}
-\begin{center}
-\includegraphics[width=\linewidth]{fig_01}
+\begin{figure}[H]
+\includegraphics[width=.8\linewidth]{fig_01}
 
-\textit{Modèle 1 de l’axe de tangage}
-\end{center}
+\caption{Modèle 1 de l’axe de tangage.}
+\end{figure}
 
 \fi
 
@@ -131,11 +131,11 @@ Dans un second temps on se place en mode stabilisation. On s’intéresse toujou
 tangage mais sans le filtre passe bas ($A_1(p)=1$).
 On considère ici que la consigne est constante donc $\varphi^*_a(t)=0$. Une perturbation $\text{Pe(p)}$ agit au niveau de l’ensemble (moteur, charge) modélisée sur le schéma bloc (Modèle 2). On appelle $\text{Com(p)}$ la transformée de Laplace de la commande du moteur $\text{com(t)}$.
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_03}
+\begin{figure}[H]
+\includegraphics[width=.8\linewidth]{fig_03}
 
-\textit{Modèle 2 de l’axe de tangage}
-\end{center}
+\caption{Modèle 2 de l’axe de tangage.}
+\end{figure}
 \fi
 
 \question{Avec le « modèle 2 » calculer la fonction de transfert $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$ qui lie la commande à la perturbation.}% Conseil de résolution : calculer $\varepsilon_1$ en fonction de $\text{Pe}(p)$, $\text{Com}(p)$ et des fonctions de transfert utiles, puis calculer $\varepsilon_2$ en fonction de $\varepsilon_1$ et des fonctions de transfert utiles, puis $\varepsilon_3$ en fonction de $\varepsilon_1$, $\varepsilon_2$ et des fonctions de transfert utiles et enfin en déduire $\text{Stab}(p)=\dfrac{\text{Com}(p)}{\text{Pe}(p)}$.}
@@ -237,10 +237,10 @@ On note $F(\omega)= \dfrac{2}{j\omega \left(1+0,4 j\omega \right)}$.
 
 \footnotesize
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|}
+\begin{tabular}{llllll}
 \hline
 $\omega$ (rad/s) & 1 & 2,5 & 5 & 7 & 10 \\ \hline
-$\text{Arg}\left(F(\omega)\right)$  & $-112\degres$ & $-135\degres$ & $-153\degres$ & $-160\degres$ & $-166\degres$ \\ \hline
+$\text{Arg}\left(F(\omega)\right)$  & $-112\degres$ & $-135\degres$ & $-153\degres$ & $-160\degres$ & $-166\degres$ \\ 
 $20 \log \left| F(\omega)\right|$ & \SI{5,4}{dB} & \SI{3}{dB} & \SI{-1}{dB} & \SI{-3}{dB} & \SI{-6,2}{dB} \\ \hline
 \end{tabular}
 \end{center}
@@ -250,12 +250,14 @@ $20 \log \left| F(\omega)\right|$ & \SI{5,4}{dB} & \SI{3}{dB} & \SI{-1}{dB} & \S
 
 \ifprof
 \else
-Le figure suivante présente la réponse temporelle de l’axe de tangage à une perturbation sinusoïdale (due par
+Le figure suivante (droite) présente la réponse temporelle de l’axe de tangage à une perturbation sinusoïdale (due par
 exemple au vent qui crée un balancement de la GYRCAM) (ordonnée en degrés).
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_05}
-\end{center}
+\begin{figure*}
+\includegraphics[width=.45\linewidth]{fig_05}\hfill
+\includegraphics[width=.45\linewidth]{fig_06}
+\end{figure*}
+
 \fi
 
 \question{Analyser ce tracé par rapport à l’exigence 1.1.2 « Perturbations » et justifier le
@@ -268,11 +270,11 @@ La commande s'oppose à la perturbation (comme évoqué question \ref{q28}). Le 
 \fi
 \ifprof
 \else
-Afin d’améliorer le comportement, un autre réglage a été effectué (voir figure suivante).
+Afin d’améliorer le comportement, un autre réglage a été effectué (voir figure précédente -- droite).
 
-\begin{center}
-\includegraphics[width=\linewidth]{fig_06}
-\end{center}
+%\begin{center}
+%\includegraphics[width=\linewidth]{fig_06}
+%\end{center}
 \fi
 
 

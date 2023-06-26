@@ -149,17 +149,18 @@ L'écart statique est nul si la boucle ouverte comprend au moins une intégratio
 %\end{resultat}
 
 \subsection{Système perturbé}
-Soit le schéma-blocs suivant : 
-\begin{center}
-%\includestandalone{Schema2Entrees_2F_R}
-\includegraphics{Schema2Entrees_2F_R}
-\end{center}
 
-\vspace{.25cm}
+ 
+\begin{marginfigure}
+%\includestandalone{Schema2Entrees_2F_R}
+\centering
+\includegraphics[width=\linewidth]{Schema2Entrees_2F_R}
+\end{marginfigure}
+
+Soit le schéma-blocs ci-contre.
 
 \textbf{L'écart est caractérisé par le soustracteur principal, c'est-à-dire celui situé le plus à gauche du schéma-blocs.}
 
-\vspace{.25cm}
 
 Par lecture directe, on a : 
 $\varepsilon(p)
@@ -201,6 +202,10 @@ $\varepsilon(p) =\underbrace{\dfrac{1}{1+\text{FTBO}(p)} E(p)}_{\text{\'Ecart vi
 %\end{tabular}
 %\end{center}
 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_erreur_02}
+\end{marginfigure}
+
 \begin{resultat}
 Il faut au moins un intégrateur en amont d'une perturbation constante pour
 annuler l'écart vis-à-vis de cette perturbation. Un intégrateur placé en aval n'a aucune
@@ -211,9 +216,6 @@ l'écart vis-à-vis de cette perturbation.
 \end{resultat}
 
 
-\begin{center}
-\includegraphics[width=.7\linewidth]{fig_erreur_02}
-\end{center}
 
 
 %\subsection{Précision et réponse fréquentielle}
