@@ -18,9 +18,8 @@
 
 
 
-
-On considère la fonction de transfert en boucle ouverte d’un système :
-$G(p)=\dfrac{2}{\left( 10p+1\right)^3}$.
+On considère la fonction de transfert en boucle ouverte d’un système à retour unitaire : 
+$G(p)=\dfrac{10}{\left( p+1\right)\left( p+4\right)}$.
 
 \question{Tracer le schéma-blocs.}
 
@@ -37,11 +36,10 @@ On change le correcteur proportionnel, par un correcteur intégral de fonction d
 
 \question{Calculer la nouvelle valeur de l’écart statique en réponse à un échelon puis en réponse à une rampe.}
 
- 
-
 
 
 \question{Identifier la fonction de transfert à partir des diagrammes de bode.}
+
 
 
 \begin{marginfigure}
@@ -50,7 +48,7 @@ On change le correcteur proportionnel, par un correcteur intégral de fonction d
 
 
 \begin{center}
-\begin{tikzpicture}[xscale=16/8]
+\begin{tikzpicture}[xscale=16/10]
 \tikzset{
 semilog lines/.style={thin, bleuxp}, 
 semilog lines 2/.style={semilog lines,bleuxpc},
@@ -58,11 +56,11 @@ semilog half lines/.style={semilog lines 2,dotted },
 semilog label x/.style={semilog lines,below,font=\tiny,black},
 semilog label y/.style={semilog lines,right,font=\tiny,black}
 }
-\begin{scope}[yscale=6/140]
+\begin{scope}[yscale=6/150]
 \OrdBode{10}
-\semilog{-3}{3}{-40}{60}
+\semilog{-3}{3}{-60}{20}
 
-\BodeGraph[orangexp,samples=150,ultra thick]{-3:3}{\SOAmp{1}{.1}{1}-\IntAmp{0.01}-\POAmp{1}{0.01}}
+\BodeGraph[orangexp,samples=150,ultra thick]{-3:3}{-\SOAmp{1}{.1}{1}+\IntAmp{0.01}+\POAmp{1}{0.01}}
 
 %\BodeAmp[orangexp,thin,samples=150]{-2:2}{\SOAmpAsymp{10}{0.2}{.9}}
 %s\BodeAmp[orangexp,ultra thick,samples=150]{-2:2}{\SOAmp{10}{0.2}{.9}}
@@ -71,23 +69,16 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 %\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
 %\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
 \end{scope}
-\begin{scope}[yshift=-3.5cm,yscale=1/90]
+\begin{scope}[yshift=-4cm,yscale=1/90]
 \UniteDegre
 \OrdBode{45}
 \semilog{-3}{3}{-90}{90}
-\BodeArg[orangexp,samples=150,ultra thick]{-3:3}{\SOArg{1}{.1}{1}-\IntArg{0.01}-\POArg{1}{0.01}}
+\BodeArg[orangexp,samples=150,ultra thick]{-3:3}{-\SOArg{1}{.1}{1}+\IntArg{0.01}+\POArg{1}{0.01}}
 %\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
 %\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
 \end{scope}
 \end{tikzpicture}
 \end{center}
-
-%\begin{center}
-%\includegraphics[width=.9\linewidth]{fig_01}
-%\end{center}
-
-
-
 
 \ifprof
 \begin{center}
@@ -101,11 +92,3 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \end{center}
 \else
 \fi
-
-
-
-
-
-
-
-
