@@ -1,6 +1,6 @@
 %\setchapterimage{fig_00}
 \chapter*{Colle \arabic{cptColle} \\
- -- \ifprof Corrigé \else Sujet \fi}
+Préhenseur -- \ifprof Corrigé \else Sujet \fi}
 
 \addcontentsline{toc}{section}{Colle \arabic{cptTD} :  -- \ifprof Corrigé \else Sujet \fi}
 
@@ -63,7 +63,7 @@ Le moteur RS330E a comme caractéristiques :
 \item inductance de l’induit : $L_I = \SI{1,65}{mH}$;
 \item frottement visqueux rapporté à l’axe de rotation du moteur négligeable;
 \item inertie du rotor + de la charge entraînée rapportée à l’axe de rotation du moteur : $J = 12\times 10^{-5} \text{kg m}^2$.
-\end{itemize}}
+\end{itemize}}[-1cm]
 
 À partir des équations du moteur à courant continu, on obtient la fonction de transfert suivante : 
 $M(p)=\dfrac{\Omega_M(p)}{U_M(p)}=\dfrac{K_T}{K_EK_T +JRp + JLp^2}$. On donne $K_{\omega}=6\,\text{V}/1000 \text{ tours min}^{-1}$.
@@ -101,16 +101,20 @@ Pour la fin, la courbe de gain sera assimilée à son tracé asymptotique.
 \question{Vérifier les valeurs des marges par le calcul.}
 
 \begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_02}
+\centering
+{\scriptsize
+%\includegraphics[width=\linewidth]{fig_02}
+\begin{tikzpicture}[xscale=1.7,yscale=2]
+\AbaqueTRsecond
+\end{tikzpicture}}
+
 \end{marginfigure}
 
 On prend une correction proportionnelle : $C(p) = C_0$.
 \question{Déterminer la bande de valeurs de $C_0$ qui permettent de vérifier les critères du cahier des charges partiel donné précédemment.}
 
 
-\begin{tikzpicture}[xscale=2.5,yscale=3]
-\AbaqueTRsecond
-\end{tikzpicture}
+
 
 
 
