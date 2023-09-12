@@ -330,6 +330,15 @@ Les pôles dominants sont $P2\simeq -15$, $P3 \simeq -5 +8i$, $P4\simeq -5 -8i$.
 \else
 \fi
 
+\begin{marginfigure}
+\centering
+{\scriptsize
+%\includegraphics[width=\linewidth]{fig_02}
+\begin{tikzpicture}[xscale=1.7,yscale=2]
+\AbaqueTRsecond
+\end{tikzpicture}}
+\end{marginfigure}
+
 \question{À l’aide des droites d’iso-amortissement, indiquer la valeur du coefficient d’amortissement $\xi$ de la
 fonction de transfert du deuxième ordre pouvant modéliser l’asservissement vertical du drone lorsque
 l’on néglige les autres pôles par rapport à ces pôles dominants.}
@@ -349,6 +358,13 @@ Le coefficient d'amortissement est inférieur à 0,69. Il y aura donc des oscill
 \else
 \fi
 
+
+\ifprof
+\else
+
+
+\fi
+
 \question{Donner l’expression littérale des pôles d’un système du deuxième ordre de pulsation propre $\omega_n$ et de coefficient d’amortissement $\xi<1$. En déduire une estimation de la pulsation propre $\omega_n$ de la
 fonction de transfert approchée de l’asservissement vertical du drone.}
 \ifprof
@@ -365,21 +381,6 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 \fi
 
 
-\ifprof
-\else
-\begin{marginfigure}[-16cm]
-\includegraphics[width=\linewidth]{fig_09}
-\end{marginfigure}
-
-\begin{marginfigure}
-\centering
-{\scriptsize
-%\includegraphics[width=\linewidth]{fig_02}
-\begin{tikzpicture}[xscale=1.7,yscale=2]
-\AbaqueTRsecond
-\end{tikzpicture}}
-\end{marginfigure}
-\fi
 
 
 %\begin{multicols}
@@ -412,3 +413,10 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 
 \fi
 
+\ifprof
+\else
+\begin{marginfigure}[-3cm]
+\centering
+\includegraphics[width=3cm]{Cy_02_Ch_01_TD_01_Drone_qr}
+\end{marginfigure}
+\fi
