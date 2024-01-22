@@ -53,7 +53,7 @@ On donne : $\lambda=0,2$ et $K_{\theta}=\SI{0,01}{V.rad^{-1}}$.
 
 \question{On veut que lorsque la pince atteint la position demandée (soit $\theta_P = \theta_{PC}$) l'écart $\varepsilon_P=v_{PC}-v_{\theta}$ soit nul. En déduire la relation entre $K_C$, $K_{\theta}$ et $\lambda$ puis la valeur numérique de $K_C$ qui permette d'assurer cet écart nul.}
 
-\marginnote{
+\marginnote[-2.5cm]{
 Le servo-entraînement utilisé est le AXL305RS330E5 qui est composé du moteur RS330E, du variateur 10/20-60 et du réducteur GB à train épicycloïdal de réduction $\lambda = 0,2$. 
 Le moteur RS330E a comme caractéristiques :
 \begin{itemize}
@@ -63,7 +63,7 @@ Le moteur RS330E a comme caractéristiques :
 \item inductance de l’induit : $L_I = \SI{1,65}{mH}$;
 \item frottement visqueux rapporté à l’axe de rotation du moteur négligeable;
 \item inertie du rotor + de la charge entraînée rapportée à l’axe de rotation du moteur : $J = 12\times 10^{-5} \text{kg m}^2$.
-\end{itemize}}[-1cm]
+\end{itemize}}
 
 À partir des équations du moteur à courant continu, on obtient la fonction de transfert suivante : 
 $M(p)=\dfrac{\Omega_M(p)}{U_M(p)}=\dfrac{K_T}{K_EK_T +JRp + JLp^2}$. On donne $K_{\omega}=6\,\text{V}/1000 \text{ tours min}^{-1}$.
@@ -91,6 +91,15 @@ Orienter le flacon & Stabilité & Marge de phase $M\varphi > 45\degres$  \\
 On considère pour l’instant que le système n’est pas corrigé : $C(p) = 1$.
 
 
+\begin{marginfigure}
+\centering
+{\scriptsize
+%\includegraphics[width=\linewidth]{fig_02}
+\begin{tikzpicture}[xscale=1.7,yscale=2]
+\AbaqueTRsecond
+\end{tikzpicture}}
+\end{marginfigure}
+
 
 \question{Tracer les diagrammes asymptotiques de Bode en amplitude et phase de la fonction de transfert $H_{BO}(p)$ du système non corrigé en plaçant avec précision les points caractéristiques.}
 
@@ -100,15 +109,6 @@ Pour la fin, la courbe de gain sera assimilée à son tracé asymptotique.
 
 \question{Vérifier les valeurs des marges par le calcul.}
 
-\begin{marginfigure}
-\centering
-{\scriptsize
-%\includegraphics[width=\linewidth]{fig_02}
-\begin{tikzpicture}[xscale=1.7,yscale=2]
-\AbaqueTRsecond
-\end{tikzpicture}}
-
-\end{marginfigure}
 
 On prend une correction proportionnelle : $C(p) = C_0$.
 \question{Déterminer la bande de valeurs de $C_0$ qui permettent de vérifier les critères du cahier des charges partiel donné précédemment.}
@@ -116,7 +116,7 @@ On prend une correction proportionnelle : $C(p) = C_0$.
 
 \ifprof
 \else
-\begin{marginfigure}[-5cm]
+\begin{marginfigure}%[-5cm]
 \centering
 \includegraphics[width=3cm]{Cy_02_Ch_01_Colle_06_Prehenseur_qr}
 \end{marginfigure}
