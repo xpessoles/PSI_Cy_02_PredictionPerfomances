@@ -24,7 +24,7 @@ Robot à câbles --
 
 
 \subsection*{Présentation}
- Les robots parallèles à câbles sont une structure de robots apparus au début des années 2000. Dans ce système, la plate-forme est déplacée et orientée par rapport à une référence fixe dans toutes les directions de l’espace par l’enroulement ou le déroulement de plusieurs câbles (figure \ref{Cy_02_Ch_04_TD_01_fig_01}). Cette structure permet à la plate-forme d’atteindre une grande zone de travail avec, en tenant compte de l’inévitable déformation des câbles, une très grande précision dans le positionnement comme dans l’orientation.
+ Les robots parallèles à câbles sont une structure de robots apparus au début des années 2000. Dans ce système, la plate-forme est déplacée et orientée par rapport à une référence fixe dans toutes les directions de l’espace par l’enroulement ou le déroulement de plusieurs câbles (figure \ref{Cy_02_Ch_04_TD_01_fig_01}). Cette structure permet à la plate-forme d’atteindre une grande zone de travail avec une très grande précision dans le positionnement comme dans l’orientation.
 
  Les performances attendues pour ce robot à câbles sont précisées dans le tableau \ref{Cy_02_Ch_04_TD_01_tab_01}.
 
@@ -51,7 +51,7 @@ Déterminer les réglages de la commande asservie des moteurs permettant d’ass
  adéquat des câbles.
 \end{obj}
 
-Conformément à ce qui a été vu précédemment, le programme de pilotage tient compte de l’allongement relatif des câbles suite aux efforts de traction lors du déplacement de la plate-forme chargée. Il génère alors, pour chacun des huit moteurs, des consignes de position et de vitesse qui sont envoyées aux variateurs de vitesse qui alimentent les moteurs afin d’assurer un positionnement de la plate-forme conforme aux attentes de l’utilisateur.
+Le programme de pilotage tient compte de l’allongement relatif des câbles suite aux efforts de traction lors du déplacement de la plate-forme chargée. Il génère alors, pour chacun des huit moteurs, des consignes de position et de vitesse qui sont envoyées aux variateurs de vitesse qui alimentent les moteurs afin d’assurer un positionnement de la plate-forme conforme aux attentes de l’utilisateur.
 L’ensemble composé d’un variateur et du moteur associé est appelé moto-variateur pour la suite. L’algorithme implanté dans le variateur est de type commande vectorielle, ce qui rend le moto-variateur équivalent à un  système du premier ordre avec une bande passante à $-\SI{3}{dB}$ de $\SI{200}{Hz}$.
  Le modèle défini figure \label{Cy_02_Ch_04_TD_01_fig_11} est adopté pour la suite.
  
@@ -73,17 +73,116 @@ L’ensemble composé d’un variateur et du moteur associé est appelé moto-va
 
 
 \question{Justifier la valeur numérique proposée pour la constante de temps $\tau$.}
+\ifprof
+\begin{corrige}
+Si la bande passant à $-\SI{3}{dB}$ est de $\SI{200}{Hz}$, on a une pulsation de cassure à \SI{200}{Hz} soit $\omega_{\tau}=\dfrac{1}{\tau} = 2\times \pi \times 200$ et $\tau = 7,9\times 10^{-4}= \SI{796}{\mu s}$.
+\end{corrige}
+\else
+\fi
 
 Dans la structure de l’asservissement de position de la figure \ref{Cy_02_Ch_04_TD_01_fig_11}, l’erreur est définie par$\mu(t)=\theta_c(t) - \theta(t)$ (grandeur en rad) et l’écart par $\varepsilon(t) = r_c(t)-r_a(t)$(grandeur en point).
 
 \question{On souhaite que l’erreur $\mu(t)$ soit nulle quand l’écart $\varepsilon(t)$ l’est : en déduire la relation entre $K_a$ et $c$.}
+\ifprof
+\begin{corrige}
+Dans les conditions citées ci-dessus, il faut donc nécessairement $K_a = c$. 
+\end{corrige}
+\else
+\fi
 
-\question{Après avoir donné l’expression de la fonction de transfert en boucle ouverte $\indice{H}{bo}\left(j\omega\right)$, tracer son diagramme asymptotique de Bode (courbes de gain et de phase en précisant la valeur de la cassure et le gain associé) et esquisser le plus précisément
- possible l’allure des courbes réelles de réponse fréquentielle.}
+\question{Après avoir donné l’expression de la fonction de transfert en boucle ouverte $\indice{H}{bo}\left(j\omega\right)$, tracer son diagramme asymptotique de Bode (courbes de gain et de phase en précisant la valeur de la cassure et le gain associé) et esquisser le plus précisément possible l’allure des courbes réelles de réponse fréquentielle.}
+\ifprof
+\begin{corrige}
+Par définition, $\indice{H}{bo}\left(j\omega\right) = \dfrac{abc}{p\left(1+\tau p\right)}$ avec $abc = 1304\times 31,4 \times \num{43,3e-3} = \SI{1773}{s^{-1}}$.
 
-\question{Relever sur la courbe tracée à la question précédente la valeur de la marge de phase $M\varphi$. Sachant  qu’on souhaite que cette marge soit de $M\varphi 45\degres$, conclure quant au réglage de $a$.}
+
+\begin{center}
+\begin{tikzpicture}[xscale=15/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=3/140]
+\OrdBode{20}
+\semilog{1}{5}{-100}{60}
+\BodeAmp[orangexp,thin,samples=150]{1:5}{\POAmpAsymp{1773}{0.000794}+\IntAmp{1}}
+\BodeAmp[orangexp,ultra thick,samples=150]{1:5}{\POAmp{1773}{0.000794}+\IntAmp{1}}
+
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-3cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{1}{5}{-180}{0}
+%\BodeArg[orangexp,thin,samples=150]{1:5}{\POArgAsymp{1773}{0.000794}+\IntAmp{1}}
+\BodeArg[orangexp,thin,samples=150]{1:5}{\POArgAsymp{1773}{0.000794}+\IntArg{1}}
+\BodeArg[orangexp,ultra thick,samples=190]{1:5}{\POArg{1773}{0.000794}+\IntArg{1}}
+
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+
+\end{corrige}
+\else
+
+\begin{center}
+\begin{tikzpicture}[xscale=15/6]
+\tikzset{
+semilog lines/.style={thin, bleuxp}, 
+semilog lines 2/.style={semilog lines,bleuxpc},
+semilog half lines/.style={semilog lines 2,dotted },
+semilog label x/.style={semilog lines,below,font=\tiny,black},
+semilog label y/.style={semilog lines,right,font=\tiny,black}
+}
+\begin{scope}[yscale=3/140]
+\OrdBode{20}
+\semilog{1}{5}{-100}{60}
+%\BodeAmp[orangexp,thin,samples=150]{1:5}{\POAmpAsymp{1773}{0.000794}+\IntAmp{1}}
+%\BodeAmp[orangexp,ultra thick,samples=150]{1:5}{\POAmp{1773}{0.000794}+\IntAmp{1}}
+
+%\draw (-1.5,28) node {\footnotesize $20\log K$};
+%\draw (1.1,10) node {\footnotesize $-$40 dB/d\'ecade};
+%\draw [dashed,ultra thick,bleuxp] (-.08,-60) -- (-.08,25);
+%\draw (-.08,-60)  node {\Huge $\cdot$} node [above right]{\footnotesize $\omega_0$};
+\end{scope}
+\begin{scope}[yshift=-3cm,yscale=1/90]
+\UniteDegre
+\OrdBode{45}
+\semilog{1}{5}{-180}{0}
+%\BodeArg[orangexp,thin,samples=150]{1:5}{\POArgAsymp{1773}{0.000794}+\IntAmp{1}}
+%\BodeArg[orangexp,thin,samples=150]{1:5}{\POArgAsymp{1773}{0.000794}+\IntArg{1}}
+%\BodeArg[orangexp,ultra thick,samples=190]{1:5}{\POArg{1773}{0.000794}+\IntArg{1}}
+
+%\BodeArg[orangexp,samples=100,thin]{-2:2}{\SOArg{10}{0.2}{.9}}
+%\BodeArg[orangexp,ultra thick]{-2:2}{\SOArg{10}{0.2}{.9}}
+\end{scope}
+\end{tikzpicture}
+\end{center}
+
+\fi
+
+\question{Relever sur la courbe tracée à la question précédente la valeur de la marge de phase $M\varphi$. Sachant  qu’on souhaite que cette marge soit de $M\varphi = 45\degres$, conclure quant au réglage de $a$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 \question{Déterminer l’expression de l’image $\mu(p)$ de l’erreur en fonction de l’image $\Theta_c(p)$ de la consigne angulaire  et de la fonction de transfert en boucle ouverte $\indice{H}{bo}(p)$ de l’asservissement.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
  La précision du système s’évalue par l’erreur en régime permanent pour des consignes de position de types :
  \begin{itemize}
@@ -93,3 +192,15 @@ Dans la structure de l’asservissement de position de la figure \ref{Cy_02_Ch_0
 Les exigences de l’utilisateur imposent que ces deux erreurs doivent être inférieures à 0,1\% de la consigne.
 
 \question{Déterminer la valeur de l’erreur statique $\mu p$. Déterminer l’expression de l’erreur de poursuite $\mu v$ en fonction des gains $a$, $b$ et $c$ et de la pente $\omega_0$. Faire l’application numérique et vérifier si les exigences de l’utilisateur sont vérifiées.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+%
+% \begin{figure} [!h]
+%\centering
+%\includegraphics[width=.8\linewidth]{fig_03}
+%%\caption{Schéma-bloc de la commande en position du moteur \label{Cy_02_Ch_04_TD_01_fig_11}}
+%\end{figure}
+
