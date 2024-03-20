@@ -24,6 +24,8 @@ Robot à câbles --
 
 
 \subsection*{Présentation}
+\ifprof
+\else
  Les robots parallèles à câbles sont une structure de robots apparus au début des années 2000. Dans ce système, la plate-forme est déplacée et orientée par rapport à une référence fixe dans toutes les directions de l’espace par l’enroulement ou le déroulement de plusieurs câbles (figure \ref{Cy_02_Ch_04_TD_01_fig_01}). Cette structure permet à la plate-forme d’atteindre une grande zone de travail avec une très grande précision dans le positionnement comme dans l’orientation.
 
  Les performances attendues pour ce robot à câbles sont précisées dans le tableau \ref{Cy_02_Ch_04_TD_01_tab_01}.
@@ -42,6 +44,7 @@ Accélération de translation & $\leq  \SI{0,5}{m.s^{-2}}$ & Selon les trois dir
 \end{tabular}
 \caption{Performances attendues pour le robot à câbles au niveau de la plate-forme suspendue \label{Cy_02_Ch_04_TD_01_tab_01}}
 \end{table}
+\fi
 
 \subsection*{Étude de l’asservissement de la longueur d’un câble pour gérer le mouvement}
 %\noindent\begin{minipage}[c]{.6\linewidth}
@@ -51,6 +54,8 @@ Déterminer les réglages de la commande asservie des moteurs permettant d’ass
  adéquat des câbles.
 \end{obj}
 
+\ifprof
+\else
 Le programme de pilotage tient compte de l’allongement relatif des câbles suite aux efforts de traction lors du déplacement de la plate-forme chargée. Il génère alors, pour chacun des huit moteurs, des consignes de position et de vitesse qui sont envoyées aux variateurs de vitesse qui alimentent les moteurs afin d’assurer un positionnement de la plate-forme conforme aux attentes de l’utilisateur.
 L’ensemble composé d’un variateur et du moteur associé est appelé moto-variateur pour la suite. L’algorithme implanté dans le variateur est de type commande vectorielle, ce qui rend le moto-variateur équivalent à un  système du premier ordre avec une bande passante à $-\SI{3}{dB}$ de $\SI{200}{Hz}$.
  Le modèle défini figure \label{Cy_02_Ch_04_TD_01_fig_11} est adopté pour la suite.
@@ -70,6 +75,7 @@ L’ensemble composé d’un variateur et du moteur associé est appelé moto-va
   \item Le correcteur est de type proportionnel de gain $a$, ce qui permet de délivrer une tension $u_{c\Omega}(t)$ proportionnelle à l’écart $\varepsilon(t)$. Un pré-réglage a permis de choisir la valeur $a=\SI{43,4}{mV.point^{-1}}$.
 \item Le comportement du motovariateur est assimilé à un premier ordre de gain $b=\SI{31,4}{rad.s^{-1}.V^{-1}}$ et de constante de temps $\tau = \SI{796}{\mu s}$.
 \end{itemize}
+\fi
 
 
 \question{Justifier la valeur numérique proposée pour la constante de temps $\tau$.}
@@ -80,7 +86,10 @@ Si la bande passant à $-\SI{3}{dB}$ est de $\SI{200}{Hz}$, on a une pulsation d
 \else
 \fi
 
+\ifprof
+\else
 Dans la structure de l’asservissement de position de la figure \ref{Cy_02_Ch_04_TD_01_fig_11}, l’erreur est définie par$\mu(t)=\theta_c(t) - \theta(t)$ (grandeur en rad) et l’écart par $\varepsilon(t) = r_c(t)-r_a(t)$(grandeur en point).
+\fi
 
 \question{On souhaite que l’erreur $\mu(t)$ soit nulle quand l’écart $\varepsilon(t)$ l’est : en déduire la relation entre $K_a$ et $c$.}
 \ifprof
@@ -173,6 +182,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \question{Relever sur la courbe tracée à la question précédente la valeur de la marge de phase $M\varphi$. Sachant  qu’on souhaite que cette marge soit de $M\varphi = 45\degres$, conclure quant au réglage de $a$.}
 \ifprof
 \begin{corrige}
+La marge de phase est mesurée à enivron 45\degres. Le choix de $a$ est donc convenable. 
 \end{corrige}
 \else
 \fi
@@ -180,20 +190,31 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 \question{Déterminer l’expression de l’image $\mu(p)$ de l’erreur en fonction de l’image $\Theta_c(p)$ de la consigne angulaire  et de la fonction de transfert en boucle ouverte $\indice{H}{bo}(p)$ de l’asservissement.}
 \ifprof
 \begin{corrige}
+Pour déterminer l'erreur vis-à-vis de la consigne, il faudrait déplacer le comparateur vers la gauche. Cela revient à avoir un asservissement à retour unitaire en passant le gain $c$ dans la chaîne directe. 
+
+On a donc $\mu(p)=\dfrac{\Theta_c(p)}{1+FTBO(p)}$ avec $FTBO(p) = \dfrac{abc}{p\left(1+\tau p\right)}$.
+
+
+Remarque : on peut aussi exprimer $\varepsilon(p) = \dfrac{R_c(p)}{1+FTBO(p)} =\dfrac{\Theta_c(p) a}{1+FTBO(p)}$. On a donc $\varepsilon(p) =a \mu(p)$.
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
  La précision du système s’évalue par l’erreur en régime permanent pour des consignes de position de types :
  \begin{itemize}
  \item échelon d’amplitude $\theta_0$ (en \si{rad}) : l’erreur en régime permanent, notée $\mu p$ (en rad), est dite « statique » ;
 \item rampe de pente $\omega_0$ (en \si{rad.s^{-1}}) : l’erreur en régime permanent, notée $\mu v$ (en \si{rad.s^{-1}}), est dite « de poursuite ».
 \end{itemize}
 Les exigences de l’utilisateur imposent que ces deux erreurs doivent être inférieures à 0,1\% de la consigne.
+\fi
 
-\question{Déterminer la valeur de l’erreur statique $\mu p$. Déterminer l’expression de l’erreur de poursuite $\mu v$ en fonction des gains $a$, $b$ et $c$ et de la pente $\omega_0$. Faire l’application numérique et vérifier si les exigences de l’utilisateur sont vérifiées.}
+\question{Déterminer la valeur de l’erreur statique $\mu_p$. Déterminer l’expression de l’erreur de poursuite $\mu_v$ en fonction des gains $a$, $b$ et $c$ et de la pente $\omega_0$. Faire l’application numérique et vérifier si les exigences de l’utilisateur sont vérifiées.}
 \ifprof
 \begin{corrige}
+La FTBO est de classe 1 et il n'y a pas de perturbation. On a donc $\mu_p = 0 $ et $\mu_v = \dfrac{\omega_0}{abc}$. Pour $\omega_0 =1$, on a $\mu_v =0,05\%$.
+Le cahier des charges est respecté.
 \end{corrige}
 \else
 \fi
