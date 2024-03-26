@@ -28,23 +28,23 @@ Robot à câbles --
 \else
  Les robots parallèles à câbles sont une structure de robots apparus au début des années 2000. Dans ce système, la plate-forme est déplacée et orientée par rapport à une référence fixe dans toutes les directions de l’espace par l’enroulement ou le déroulement de plusieurs câbles (figure \ref{Cy_02_Ch_04_TD_01_fig_01}). Cette structure permet à la plate-forme d’atteindre une grande zone de travail avec une très grande précision dans le positionnement comme dans l’orientation.
 
- Les performances attendues pour ce robot à câbles sont précisées dans le tableau \ref{Cy_02_Ch_04_TD_01_tab_01}.
-
-\begin{table}[!h]
-\centering
-\begin{tabular}{llp{5.5cm}}
-\hline
-\textbf{Exigences} & \textbf{Niveau} & \textbf{Remarques} \\
-\hline
-Charge déplacée & $\leq \SI{616}{kg}$ & Valeur limitée par la résistance des câbles \\
-Précision de positionnement & $\leq \SI{10}{mm}$ & Dans les trois directions de l’espace \\
-Vitesse de translation & $\leq \SI{1}{m.s^{-1}}$ & Selon les trois directions de l’espace \\
-Accélération de translation & $\leq  \SI{0,5}{m.s^{-2}}$ & Selon les trois directions de l’espace \\
-\hline
-\end{tabular}
-\caption{Performances attendues pour le robot à câbles au niveau de la plate-forme suspendue \label{Cy_02_Ch_04_TD_01_tab_01}}
-\end{table}
-\fi
+% Les performances attendues pour ce robot à câbles sont précisées dans le tableau \ref{Cy_02_Ch_04_TD_01_tab_01}.
+%
+%\begin{table}[!h]
+%\centering
+%\begin{tabular}{llp{5.5cm}}
+%\hline
+%\textbf{Exigences} & \textbf{Niveau} & \textbf{Remarques} \\
+%\hline
+%Charge déplacée & $\leq \SI{616}{kg}$ & Valeur limitée par la résistance des câbles \\
+%Précision de positionnement & $\leq \SI{10}{mm}$ & Dans les trois directions de l’espace \\
+%Vitesse de translation & $\leq \SI{1}{m.s^{-1}}$ & Selon les trois directions de l’espace \\
+%Accélération de translation & $\leq  \SI{0,5}{m.s^{-2}}$ & Selon les trois directions de l’espace \\
+%\hline
+%\end{tabular}
+%\caption{Performances attendues pour le robot à câbles au niveau de la plate-forme suspendue \label{Cy_02_Ch_04_TD_01_tab_01}}
+%\end{table}
+%\fi
 
 \subsection*{Étude de l’asservissement de la longueur d’un câble pour gérer le mouvement}
 %\noindent\begin{minipage}[c]{.6\linewidth}
@@ -187,6 +187,8 @@ La marge de phase est mesurée à enivron 45\degres. Le choix de $a$ est donc co
 \else
 \fi
 
+
+
 \question{Déterminer l’expression de l’image $\mu(p)$ de l’erreur en fonction de l’image $\Theta_c(p)$ de la consigne angulaire  et de la fonction de transfert en boucle ouverte $\indice{H}{bo}(p)$ de l’asservissement.}
 \ifprof
 \begin{corrige}
@@ -202,10 +204,26 @@ Remarque : on peut aussi exprimer $\varepsilon(p) = \dfrac{R_c(p)}{1+FTBO(p)} =\
 
 \ifprof
 \else
+
+\ifprof
+\else
+\marginnote{
+\begin{solution}
+\begin{enumerate}
+\item . 
+\item $K_a = c$.
+\item $\indice{H}{BO}(j\omega)=\dfrac{1777}{j\omega\left(1+\dfrac{j\omega}{1256}\right)}$.
+\item .
+\item $\mu(p)=\dfrac{\Theta_c(p)}{1+\indice{H}{BO}(p)}$.
+\item $\mu_p = 0$, $\mu_v = \dfrac{\omega_0}{abc}$.
+\end{enumerate}
+\end{solution}}
+\fi
+
  La précision du système s’évalue par l’erreur en régime permanent pour des consignes de position de types :
  \begin{itemize}
- \item échelon d’amplitude $\theta_0$ (en \si{rad}) : l’erreur en régime permanent, notée $\mu p$ (en rad), est dite « statique » ;
-\item rampe de pente $\omega_0$ (en \si{rad.s^{-1}}) : l’erreur en régime permanent, notée $\mu v$ (en \si{rad.s^{-1}}), est dite « de poursuite ».
+ \item échelon d’amplitude $\theta_0$ (en \si{rad}) : l’erreur en régime permanent, notée $\mu_p$ (en rad), est dite « statique » ;
+\item rampe de pente $\omega_0$ (en \si{rad.s^{-1}}) : l’erreur en régime permanent, notée $\mu_v$ (en \si{rad.s^{-1}}), est dite « de poursuite ».
 \end{itemize}
 Les exigences de l’utilisateur imposent que ces deux erreurs doivent être inférieures à 0,1\% de la consigne.
 \fi
