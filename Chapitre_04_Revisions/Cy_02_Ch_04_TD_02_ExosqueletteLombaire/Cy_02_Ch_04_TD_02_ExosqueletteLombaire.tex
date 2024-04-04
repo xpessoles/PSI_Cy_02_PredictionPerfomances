@@ -23,6 +23,8 @@ Exosquelette lombaire --
 \end{marginfigure}
 
 \subsection*{Mise en situation}
+\ifprof
+\else
 On s'intéresse à un banc d'essai permettant de valider un actionneur linéaire. 
 Dans ce cadre, il est nécessaire de proposer un modèle de connaissance de l’asservissement en force, le valider par comparaison avec une mesure sur le banc d’essai et vérifier les performances de l’actionneur linéaire sur ce banc d’essai. Ce modèle permettra de valider une commande pour le cas spécifique étudié.
 
@@ -34,8 +36,13 @@ Le schéma-blocs est donné dans la figure \ref{Cy_02_Ch_04_TD_02_fig_11}.
  développée par un actionneur linéaire placé sur le banc d’essai \label{Cy_02_Ch_04_TD_02_fig_11}}
 \end{figure*}
 
+\fi
+
 
 \subsection*{Réglage de la boucle d'asservissement de la vitesse angulaire du moteur}
+
+\ifprof
+\else
 Le schéma-blocs décrivant la structure de l'asservissement de la vitesse angulaire du moteur est fourni sur la figure \ref{Cy_02_Ch_04_TD_02_fig_12}. Cet asservissement doit respecter le cahier des charges fourni dans le tableau \ref{Cy_02_Ch_04_TD_02_tab_04}.
 
 \begin{figure}[!h]
@@ -61,6 +68,8 @@ Le choix d'un correcteur proportionnel intégral est fait afin de diminuer l'inf
 
 On note $\indice{H}{BOv}(p)=\frac{\Omega_{m}(p)}{\varepsilon_{v}(p)}$ la fonction de transfert en boucle ouverte de l'asservissement de vitesse angulaire du moteur.
 
+\fi
+
 %Q 17. 
 \question{Déterminer l'expression littérale de la phase de $\indice{H}{BOv}(\mathrm{i} \omega)$. En déduire la valeur numérique de $\tau_{i}$ respectant les critères concepteur de la boucle de vitesse. \label{Cy_02_Ch_04_TD_02_q_17}}
 \ifprof
@@ -80,6 +89,8 @@ $\Rightarrow  \tau_i  \geq \SI{0,57}{s}$.
 \else
 \fi
 
+\ifprof
+\else
 Le diagramme de Bode de la boucle ouverte $H_{B O v}(p)$, avec $K_{i}=1$ et $\tau_{i}$ déterminé à la question \ref{Cy_02_Ch_04_TD_02_q_17} , est donné sur la figure \ref{Cy_02_Ch_04_TD_02_fig_13}.
 
 
@@ -88,6 +99,7 @@ Le diagramme de Bode de la boucle ouverte $H_{B O v}(p)$, avec $K_{i}=1$ et $\ta
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-10(1)}
 \caption{Diagramme de Bode de $\indice{H}{BOv}(p)$ \label{Cy_02_Ch_04_TD_02_fig_13}}
 \end{figure}
+\fi
 
 
 %Q 18. 
@@ -106,6 +118,8 @@ L'erreur statique est nulle car il y a un intégarteur dans le correcteur (elle 
 \fi
 
 \subsection*{Simplification du modèle de connaissance}
+\ifprof
+\else
 Il est possible de mettre le schéma-blocs de la figure \ref{Cy_02_Ch_04_TD_02_fig_11} 
 sous la forme du schéma-blocs de la figure \ref{Cy_02_Ch_04_TD_02_fig_14}, afin de faciliter la prévision des performances simulées.
 
@@ -113,6 +127,7 @@ sous la forme du schéma-blocs de la figure \ref{Cy_02_Ch_04_TD_02_fig_14}, afin
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-11(1)}
 \caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire \label{Cy_02_Ch_04_TD_02_fig_14}}
 \end{figure}
+\fi
 
 %Q 19
 \question{Déterminer les fonctions de transfert $H_{8}(p)$ et $H_{9}(p)$ en fonction de $K_{5}, I_{\text {eq}}$ et $H_{6}(p)$. Ne pas remplacer $K_{5}$ et $H_{6}(p)$ par les expressions trouvées précédemment. \label{Cy_02_Ch_04_TD_02_q_19}}
@@ -130,6 +145,8 @@ $H_8(p)=\dfrac{H_6(p)}{1+ \dfrac{H_6(p) K_5}{\indice{I}{eq}p} }$ $=\dfrac{H_6(p)
 \else
 \fi
 
+\ifprof
+\else
 Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figure \ref{Cy_02_Ch_04_TD_02_fig_14} est adapté afin de disposer d'un schéma-blocs 
 à retour unitaire, tel que décrit sur la figure \ref{Cy_02_Ch_04_TD_02_fig_15}.
 
@@ -138,6 +155,7 @@ Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figu
 \includegraphics[width=.6\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-11}
 \caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire \label{Cy_02_Ch_04_TD_02_fig_15}}
 \end{figure}
+\fi
 
 
 %Q 20
@@ -145,6 +163,11 @@ Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figu
 et de $K_{\text{res}}$. \label{Cy_02_Ch_04_TD_02_q_20}}
 \ifprof
 \begin{corrige}
+En décalant le point de prélèvement de droite vers la droite, on a alors $\indice{K}{res}$ dans la boucle de retour. 
+Pour que le système soit correctement asservi, il faut donc nécessairement que 
+$\indice{K}{adapt} = \indice{K}{capt}\indice{K}{res}$
+
+On se ramène ensuite à un retour unitaire. On alors $\indice{K}{10} = \indice{K}{capt}\indice{K}{res}$.
 \end{corrige}
 \else
 \fi
@@ -153,6 +176,8 @@ et de $K_{\text{res}}$. \label{Cy_02_Ch_04_TD_02_q_20}}
 \question{Déterminer la fonction de transfert $G(p)$ en fonction de $H_{2}(p), I_{\text {eq}}, H_{8}(p),  H_{9}(p)$ et $K_{\text {res }}$. Ne pas remplacer $H_{2}(p), H_{8}(p)$ et $H_{9}(p)$ par les expressions trouvées précédemment. \label{Cy_02_Ch_04_TD_02_q_21}}
 \ifprof
 \begin{corrige}
+$G(p)=\dfrac{H_2(p)\dfrac{1}{\indice{J}{eq}p}H_8(p)}{1+H_2(p)H_8(p)H_9(p)\dfrac{1}{\indice{J}{eq}p}}\indice{K}{res}$
+$ = \dfrac{H_2(p)H_8(p)}{\indice{J}{eq}p+H_2(p)H_8(p)H_9(p)}\indice{K}{res}$
 \end{corrige}
 \else
 \fi
@@ -164,7 +189,8 @@ G(p)=\frac{F(p)}{\Omega_{c}(p)}=\frac{1+\tau_{i} p}{p} \frac{1,2 \times 10^{-5}}
 $$
 
 \subsection*{Analyse des performances de l'asservissement en force développée par un actionneur linéaire}
-
+\ifprof
+\else
 Il est proposé dans cette section d'analyser les performances simulées de l'asservissement en force dont un extrait du cahier des charges est présenté dans le tableau~\ref{Cy_02_Ch_04_TD_02_tab_05}.
 
 \begin{table}[!h]
@@ -180,7 +206,7 @@ Id1.1 & Stabilité & Marge de phase & $\geqslant 60^{\circ}$ \\
 %\hline
 Id1.2 & Précision & Erreur en régime permanent pour une entrée en échelon & $<1 \%$ \\
 %\hline
-\multirow{2}{*}{Id1.3} & Rapidité & Temps de réponse à 5\% pour une consigne en échelon de force de $40 \mathrm{~N}$ & $\operatorname{tr}_{5 \%}<1 \mathrm{~s}$ \\
+Id1.3 & Rapidité & Temps de réponse à 5\% pour une consigne en échelon de force de $40 \mathrm{~N}$ & $\operatorname{tr}_{5 \%}<1 \mathrm{~s}$ \\
 %\cline { 3 - 5 }
  &  & Vitesse maximale de montée de la force de traction & $100 \mathrm{~N} \cdot \mathrm{s}^{-1}$ \\
 \hline
@@ -192,7 +218,7 @@ On note $\indice{H}{BO f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}$ la fonction de tra
 
 
 \begin{figure}[!h]
-\includegraphics[width=.8\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12(1)}
+\includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12(1)}
 \caption{Diagramme de Bode de $H_{B O f}(p)$  \label{Cy_02_Ch_04_TD_02_fig_16}}
 \end{figure}
 
@@ -200,24 +226,34 @@ On note $\indice{H}{BO f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}$ la fonction de tra
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12}
 \caption{Réponses temporelles du modèle et expérimentale, pour une consigne en échelon de force de $40 \mathrm{~N}$ \label{Cy_02_Ch_04_TD_02_fig_17}}
 \end{marginfigure}
+\fi
+
 %Q 22
 \question{Déterminer la valeur numérique limite de $K_{\text {cor }}$ afin que la boucle d'asservissement de force respecte les critères de marge de phase et de gain du tableau~\ref{Cy_02_Ch_04_TD_02_tab_05}.}
 \ifprof
 \begin{corrige}
+La marge de gain sera toujours infinie car la phase tend asymptotiquement vers $-180\degres$.
+
+Pour régler la marge de phase à 60\degres, il faut relever le gain de \SI{75}{dB}. On a donc $\indice{K}{cor}  =10^{75/20} \simeq  5623$.
 \end{corrige}
 \else
 \fi
 
 
 
-
+\ifprof
+\else
 Les courbes sur la figure \ref{Cy_02_Ch_04_TD_02_fig_17} représentent les réponses temporelles du modèle de connaissance de la figure \ref{Cy_02_Ch_04_TD_02_fig_11}, avec les correcteurs $C_{v}(p)$ et $C(p)$ correctement réglés, et de l'expérimentation sur le banc d'essai pour une consigne en échelon de force de $40 \mathrm{~N}$.
+\fi
 
 
 %Q 23
 \question{Quel critère du tableau des exigences (tableau \ref{Cy_02_Ch_04_TD_02_tab_05}) n'est pas pris en compte dans le modèle de connaissance ? D'après la courbe expérimentale, ce critère est-il respecté par le système réel ?}
 \ifprof
 \begin{corrige}
+La réponse temporelle du modèle ne permet pas de savoir si l'exigence 1.1 sur le dépassement est resepectée. 
+
+Ce critère semble respecté sur le système réel vu qu'aucun dépassement n'est observé en régime permanent. 
 \end{corrige}
 \else
 \fi
