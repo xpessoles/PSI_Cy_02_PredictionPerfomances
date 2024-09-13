@@ -112,7 +112,7 @@ Il faut donc déterminer $K_i$ tel que $20\log K_i = -80$ soit $K_i = \SI{1e{-4}
 
 
 Les critères de marge et de pulsation de coupure sont respectés (on a tout fait pour).
-L'erreur statique est nulle car il y a un intégarteur dans le correcteur (elle sera nulle à condition que la perturbation soit constante).
+L'erreur statique est nulle car il y a un intégrateur dans le correcteur (elle sera nulle à condition que la perturbation soit constante).
 
 \end{corrige}
 \else
@@ -141,7 +141,6 @@ On sort le bloc $\dfrac{1}{\indice{I}{eq}p}$ de la << petite >> boucle et $\dfra
 En identifiant, on a alors $H_9(p)=\dfrac{1}{H_6(p)}$ et en utilisant la formule de Black, on a 
 $H_8(p)=\dfrac{H_6(p)}{1+ \dfrac{H_6(p) K_5}{\indice{I}{eq}p} }$ $=\dfrac{H_6(p) \indice{I}{eq}p}{\indice{I}{eq}p+H_6(p) K_5 }$.
 
-
 \end{corrige}
 \else
 \fi
@@ -154,9 +153,10 @@ Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figu
 
 \begin{figure}[!h]
 \includegraphics[width=.6\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-11}
-\caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire \label{Cy_02_Ch_04_TD_02_fig_15}}
+\caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire -- Voir note suivante \label{Cy_02_Ch_04_TD_02_fig_15}}
 \end{figure}
 \fi
+\marginnote{Il y a vraissemblablement une erreur dans le sujet de base : sur la figure \ref{Cy_02_Ch_04_TD_02_fig_15}, $\varepsilon_f(p)$ devrait être en amon du bloc $C(p)$.}
 
 
 %Q 20
@@ -267,4 +267,17 @@ Ce critère semble respecté sur le système réel vu qu'aucun dépassement n'es
 \end{corrige}
 \else
 \fi
-
+\ifprof
+\else
+\begin{solution}
+\begin{enumerate}
+\item $\tau_i \geq \SI{0,57}{s}$.
+\item $K_i = \SI{1e-4}{V.s.rad^{-1}}$.
+\item $H_9(p)=\dfrac{1}{H_6(p)}$ et $H_8(p)=\dfrac{H_6(p) \indice{I}{eq}p}{\indice{I}{eq}p+H_6(p) K_5 }$.
+\item $\indice{K}{10} = \indice{K}{capt}\indice{K}{res}$.
+\item $G(p) = \dfrac{H_2(p)H_8(p)}{\indice{J}{eq}p+H_2(p)H_8(p)H_9(p)}\indice{K}{res}$.
+\item $\indice{K}{cor}\simeq 5600$.
+\item .
+\end{enumerate}
+\end{solution}
+\fi
