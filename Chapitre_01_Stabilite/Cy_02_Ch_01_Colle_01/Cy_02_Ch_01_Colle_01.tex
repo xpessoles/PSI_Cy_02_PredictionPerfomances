@@ -25,7 +25,10 @@ $G(p)=\dfrac{2}{\left( 10p+1\right)^3}$.
 
 \question{Tracer le schéma-blocs.}
 
+\question{Déterminer l'erreur de statique et l'erreur de trainage.}
+
 \question{Tracer les diagrammes de bode de $G(p)$.}
+
 \question{Tracer la marge de gain et la marge de phase.}
 
 On place ce système dans une boucle de régulation à retour unitaire en le précédant d’un correcteur proportionnel $C(p)=K$.
@@ -45,9 +48,6 @@ On change le correcteur proportionnel, par un correcteur intégral de fonction d
 \question{Identifier la fonction de transfert à partir des diagrammes de bode.}
 
 
-\begin{marginfigure}
-\includegraphics[width=\linewidth]{fig_02}
-\end{marginfigure}
 
 
 \begin{center}
@@ -89,6 +89,9 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 
 
 
+\begin{marginfigure}
+\includegraphics[width=\linewidth]{fig_02}
+\end{marginfigure}
 
 \ifprof
 \begin{center}
@@ -106,7 +109,7 @@ semilog label y/.style={semilog lines,right,font=\tiny,black}
 
 \ifprof
 \else
-\begin{marginfigure}[-3cm]
+\begin{marginfigure}%[-3cm]
 \centering
 \includegraphics[width=3cm]{Cy_02_Ch_01_Colle_01_qr}
 \end{marginfigure}
