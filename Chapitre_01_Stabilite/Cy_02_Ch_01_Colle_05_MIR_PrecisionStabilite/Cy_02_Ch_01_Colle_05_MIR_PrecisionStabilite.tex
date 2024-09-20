@@ -157,33 +157,40 @@ L’objectif de cette partie est de dimensionner le correcteur nécessaire au re
 
 Le transducteur est en liaison glissière de direction $\vect{x_r}$, avec le corps \textbf{1} du robot MIR. La chaîne d’énergie est composée entre autre, d’un actionneur rotatif qui exerce un couple $c(t)$ sur le pignon \textbf{11}, qui est en liaison pivot, supposée parfaite, avec le robot MIR.
 Un système poulies (\textbf{11} et \textbf{12}) et courroie crantée \textbf{14} impose le mouvement de translation au transducteur \textbf{13}.
- 
- Le comportement dynamique du système est régit par l'équation suivante  :
- $$
- M_{eq}\dfrac{\text{d}v_r(t)}{\text{d}t}=\delta c(t) + \beta v_r(t) + \gamma g u(t)
- $$
-avec $u(t)$ échelon unitaire.
+% 
+% Le comportement dynamique du système est régit par l'équation suivante  :
+% $$
+% M_{eq}\dfrac{\text{d}v_r(t)}{\text{d}t}=\delta c(t) + \beta v_r(t) + \gamma g u(t)
+% $$
+%avec $u(t)$ échelon unitaire\sidenote{En passant dans le domaine de Laplace, $u(t)$ est donc transformé en $\dfrac{1}{p}$}.
+%
+%
+%On cherche à garantir une vitesse de translation du transducteur \textbf{13} égale à la valeur de consigne indépendamment de l’angle $\alpha$.
 
-On cherche à garantir une vitesse de translation du transducteur \textbf{13} égale à la valeur de consigne indépendamment de l’angle $\alpha$.
+%Pour cela, on réalise le système bouclé suivant :
+%
+%\begin{center}
+%	\includegraphics[width=\linewidth]{fig_13}
+%\end{center}
+%
+%%Notations : $V_r(p)$ est la transformée de Laplace de $v_r(t)$ vitesse de translation du transducteur \textbf{13}.
+%%$F_{\text{pert}}(p)$ est la transformée de Laplace de $f_{\text{pert}}(t)$, avec :
+%%$f_{\text{pert}}(t) = -m_t  \sin \alpha u(t)$ avec $u(t)$ F unitaire.
+%
+%
+%\question{En supposant des conditions initiales nulles, et que $\indice{F}{pert}(p)=0$ exprimer les fonctions de transfert $A(p)$ et $B(p)$ en fonction entre autres de $\delta$, $\beta$ et $M_{eq}$.
+%}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
-Pour cela, on réalise le système bouclé suivant :
+On adopte pour la suite la modélisation suivante :
 
 \begin{center}
-	\includegraphics[width=\linewidth]{fig_13}
+	\includegraphics[width=\linewidth]{fig_14}
 \end{center}
-
-%Notations : $V_r(p)$ est la transformée de Laplace de $v_r(t)$ vitesse de translation du transducteur \textbf{13}.
-%$F_{\text{pert}}(p)$ est la transformée de Laplace de $f_{\text{pert}}(t)$, avec :
-%$f_{\text{pert}}(t) = -m_t  \sin \alpha u(t)$ avec $u(t)$ échelon unitaire.
-
-
-\question{En supposant des conditions initiales nulles, exprimer les fonctions de transfert $A(p)$ et $B(p)$ en fonction entre autres de $\delta$, $\beta$ et $M_{eq}$.
-}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
 
 
 Le capteur est modélisé par un gain pur de valeur $K_{\text{capt}}$.
@@ -194,11 +201,6 @@ Le capteur est modélisé par un gain pur de valeur $K_{\text{capt}}$.
 \end{corrige}
 \else
 \fi
-On adopte pour la suite la modélisation suivante :
-
-\begin{center}
-	\includegraphics[width=\linewidth]{fig_14}
-\end{center}
 
 Avec $H_{\text{mot}}(p)=\dfrac{K_m}{1+\tau_m p}$, $G(p)=\dfrac{K}{1+\tau p}$ et $H(p)=K_{\text{cor}}$ fonction de transfert du correcteur.
 
