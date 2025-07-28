@@ -91,6 +91,10 @@ Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}
 \question{Déterminer la fonction de transfert en boucle fermée $\indice{H}{BF}(p)=\dfrac{\Omega_m(p)}{\Omega_{mc}(p)}$ pour $C_f(p)=0$.}
 \ifprof
 \begin{corrige}
+On a 
+$\indice{H}{BF}(p) =  \indice{K}{cod}   \dfrac{C_2(p)K_t H_2(p)}{1+C_2(p)K_t H_2(p)\indice{K}{cod}}$
+$=    \dfrac{K_2K_t \dfrac{1}{\indice{J}{eq}p}\indice{K}{cod}}{1+K_2K_t \dfrac{1}{\indice{J}{eq}p}\indice{K}{cod}}$
+$=    \dfrac{K_2K_t \indice{K}{cod}}{\indice{J}{eq}p+K_2K_t \indice{K}{cod}}$.
 \end{corrige}
 \else
 \fi
@@ -98,6 +102,9 @@ Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}
 \question{Justifier que cet asservissement est stable et donner la valeur de la marge de phase.}
 \ifprof
 \begin{corrige}
+La FTBO est de la forme $\dfrac{\indice{K}{BO}}{p}$. C'est donc un intégrateur pur et la marge de phase est de $90\degres$ et le système est stable.
+
+(On peut aussi remarquer que la FTBF est d'ordre 1. Il s'agit donc d'un système stable.)
 \end{corrige}
 \else
 \fi
@@ -106,6 +113,8 @@ Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}
 \question{Déterminer la condition sur $K_2$ afin de satisfaire l’exigence de rapidité.}
 \ifprof
 \begin{corrige}
+En utilisant la question 1, on a $\tau = \dfrac{\indice{J}{eq}}{K_2K_t \indice{K}{cod}}$. On souhaite $t_{5\%} <  \SI{0,180}{s}$ soit $3 \dfrac{\indice{J}{eq}}{K_2K_t \indice{K}{cod}} < 0,180$. 
+En conséquence, $K_2  > 	\dfrac{3 \indice{J}{eq}}{0,180 \times K_t \indice{K}{cod}}$.
 \end{corrige}
 \else
 \fi
@@ -114,6 +123,8 @@ Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}
 \question{Calculer l’erreur relative en régime permanent $\mu_{v \infty}$ pour une consigne de vitesse en échelon de valeur $\omega_{mc0}$.}
 \ifprof
 \begin{corrige}
+Le gain de la FTBF est unitaire. Donc l’erreur relative en régime permanent est nulle.
+
 \end{corrige}
 \else
 \fi
@@ -129,6 +140,9 @@ On donne les diagrammes de Bode de la FTBO.
 \question{Identifier la valeur de $K_2$ qui a été réellement choisie par le constructeur.}
 \ifprof
 \begin{corrige}
+On a $\indice{K}{BO} = \dfrac{K_2 K_t \indice{K}{cod}}{\indice{J}{eq}} = 12 K_2$.
+Par ailleurs, lorque $\omega=1$, le gain vaut $20\log \indice{K}{BO}= 32$. 
+On a donc $\indice{K}{BO} \simeq 40$ et $K_2 \simeq 3,3$.
 \end{corrige}
 \else
 \fi
@@ -136,6 +150,7 @@ On donne les diagrammes de Bode de la FTBO.
 \question{À partir de cette valeur, calculer l’erreur en vitesse en régime permanent $\Delta \omega_{\infty}$ pour une consigne de vitesse en rampe de pente $a$ et valider le critère de précision des exigences.}
 \ifprof
 \begin{corrige}
+Pour un système de classe 1, $\Delta \omega_{\infty} = \dfrac{a}{\indice{K}{BO}}$ $=1800\times0,025 = 45$ $<\SI{100}{rad/s}$ ce qui est compatible à ce qui est demandé par le cahier des charges.  
 \end{corrige}
 \else
 \fi
