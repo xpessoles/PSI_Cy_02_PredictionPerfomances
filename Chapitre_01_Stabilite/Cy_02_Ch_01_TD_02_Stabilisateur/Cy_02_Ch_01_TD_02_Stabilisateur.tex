@@ -173,7 +173,8 @@ $=\lim\limits_{p\to 0}p\text{Stab}(p)\text{Pe}(p)$
 \else
 \fi
 
-\question{Avec le modèle 2 déterminer la FTBO $\dfrac{\text{Mes}\varphi(p)}{\varepsilon_2(p)}$ de ce schéma puis calculer la fonction de transfert liant la perturbation et la sortie $\text{Pert}(p)=\dfrac{\varphi(p)}{\text{Pe}(p)}$.}
+\question{Avec le modèle 2 déterminer %la FTBO $F(p)=\dfrac{\text{Mes}\varphi(p)}{\varepsilon_2(p)}$ de ce schéma puis calculer 
+la fonction de transfert liant la perturbation et la sortie $\text{Pert}(p)=\dfrac{\varphi(p)}{\text{Pe}(p)}$.}
 \ifprof
 \begin{corrige}
 
@@ -216,7 +217,27 @@ Le système n'est pas précis s'il y a une perturbation échelon.
 \else
 \fi
 
-\question{On désire une marge de gain de $M_G \geq \SI{5}{dB}$ et une marge de phase $M\varphi \geq 20\degres$ (exigence 1.1.3 « Stabilité de la commande »). Déterminer la valeur maximale de $K_P$ en utilisant les données ci-dessous.}
+
+
+
+\ifprof \else
+
+On simplifie l'expression de la FTBO non corrigée (sans $K_P$) et on note  $F(\omega)= \dfrac{2}{j\omega \left(1+0,4 j\omega \right)}$. Les valeurs prises par le gain et la phase sont donnés dans le tableau suivant.
+
+\footnotesize
+\begin{center}
+\begin{tabular}{llllll}
+\hline
+$\omega$ (rad/s) & 1 & 2,5 & 5 & 7 & 10 \\ \hline
+$\text{Arg}\left(F(\omega)\right)$  & $-112\degres$ & $-135\degres$ & $-153\degres$ & $-160\degres$ & $-166\degres$ \\ 
+$20 \log \left| F(\omega)\right|$ & \SI{5,4}{dB} & \SI{3}{dB} & \SI{-1}{dB} & \SI{-3}{dB} & \SI{-6,2}{dB} \\ \hline
+\end{tabular}
+\end{center}
+\normalsize
+
+\fi
+
+\question{On désire une marge de gain de $M_G \geq \SI{5}{dB}$ et une marge de phase $M\varphi \geq 20\degres$ (exigence 1.1.3 « Stabilité de la commande »). Déterminer la valeur maximale de $K_P$ en utilisant les données dans le tableau.}
 % (OU 40 ?degres)
 
 
@@ -232,31 +253,17 @@ Pour une marge  de de phase de 20\degres, la phase doit être de $-160\degres$ l
 Le système étant d'ordre 2, la marge de gain sera forcément infinie.
 \end{corrige}
 \else
-
-
-On note $F(\omega)= \dfrac{2}{j\omega \left(1+0,4 j\omega \right)}$.
-
-\footnotesize
-\begin{center}
-\begin{tabular}{llllll}
-\hline
-$\omega$ (rad/s) & 1 & 2,5 & 5 & 7 & 10 \\ \hline
-$\text{Arg}\left(F(\omega)\right)$  & $-112\degres$ & $-135\degres$ & $-153\degres$ & $-160\degres$ & $-166\degres$ \\ 
-$20 \log \left| F(\omega)\right|$ & \SI{5,4}{dB} & \SI{3}{dB} & \SI{-1}{dB} & \SI{-3}{dB} & \SI{-6,2}{dB} \\ \hline
-\end{tabular}
-\end{center}
-\normalsize
-
 \fi
 
 \ifprof
 \else
-Le figure suivante (droite) présente la réponse temporelle de l’axe de tangage à une perturbation sinusoïdale (due par
+Le figure \ref{fig_cy_02_ch_01_td_02_fig7} (droite) présente la réponse temporelle de l’axe de tangage à une perturbation sinusoïdale (due par
 exemple au vent qui crée un balancement de la GYRCAM) (ordonnée en degrés).
 
 \begin{figure*}
 \includegraphics[width=.45\linewidth]{fig_05}\hfill
 \includegraphics[width=.45\linewidth]{fig_06}
+\caption{Réponse de l'axe à une perturbation sinusoïdale \label{fig_cy_02_ch_01_td_02_fig7}}
 \end{figure*}
 
 \fi
