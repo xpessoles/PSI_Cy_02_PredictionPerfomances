@@ -156,7 +156,7 @@ Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figu
 \caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire -- Voir note suivante \label{Cy_02_Ch_04_TD_02_fig_15}}
 \end{figure}
 \fi
-\marginnote{Il y a vraissemblablement une erreur dans le sujet de base : sur la figure \ref{Cy_02_Ch_04_TD_02_fig_15}, $\varepsilon_f(p)$ devrait être en amon du bloc $C(p)$.}
+\marginnote[.5cm]{Il y a vraissemblablement une erreur dans le sujet de base : sur la figure \ref{Cy_02_Ch_04_TD_02_fig_15}, $\varepsilon_f(p)$ devrait être en amont du bloc $C(p)$.}
 
 
 %Q 20
@@ -215,18 +215,22 @@ Id1.3 & Rapidité & Temps de réponse à 5\% pour une consigne en échelon de fo
 \caption{Extrait du cahier des charges fonctionnel de l'actionneur linéaire sur le banc d'essai \label{Cy_02_Ch_04_TD_02_tab_05}}
 \end{table}
 
-On note $\indice{H}{BO f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}$ la fonction de transfert en boucle ouverte de l'asservissement en force développé par un actionneur linéaire. Dans un premier temps, le choix d'un correcteur proportionnel $C(p)=K_{\text {cor }}$ est réalisé. Le diagramme de Bode de la fonction de transfert $H_{B O f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}=K_{\text {cor }} K_{10} G(p)$, avec $K_{\text {cor }}=1$ et la valeur de $\tau_{i}$ déterminée à la question \ref{Cy_02_Ch_04_TD_02_q_17} , est donné sur la figure \ref{Cy_02_Ch_04_TD_02_fig_16}.\\
-
-
 \begin{figure}[!h]
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12(1)}
 \caption{Diagramme de Bode de $H_{B O f}(p)$  \label{Cy_02_Ch_04_TD_02_fig_16}}
 \end{figure}
 
+
 \begin{marginfigure}%[!h]
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12}
 \caption{Réponses temporelles du modèle et expérimentale, pour une consigne en échelon de force de $40 \mathrm{~N}$ \label{Cy_02_Ch_04_TD_02_fig_17}}
 \end{marginfigure}
+
+On note $\indice{H}{BO f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}$ la fonction de transfert en boucle ouverte de l'asservissement en force développé par un actionneur linéaire. Dans un premier temps, le choix d'un correcteur proportionnel $C(p)=K_{\text {cor }}$ est réalisé. Le diagramme de Bode de la fonction de transfert $H_{B O f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}=K_{\text {cor }} K_{10} G(p)$, avec $K_{\text {cor }}=1$ et la valeur de $\tau_{i}$ déterminée à la question \ref{Cy_02_Ch_04_TD_02_q_17} , est donné sur la figure \ref{Cy_02_Ch_04_TD_02_fig_16}.\\
+
+
+
+
 \fi
 
 %Q 22
@@ -248,13 +252,6 @@ Les courbes sur la figure \ref{Cy_02_Ch_04_TD_02_fig_17} représentent les répo
 \fi
 
 
-\ifprof
-\else
-\begin{marginfigure}
-\centering
-\includegraphics[width=3cm]{Cy_02_Ch_04_TD_02_qr}
-\end{marginfigure}
-\fi
 
 
 %Q 23
@@ -267,6 +264,16 @@ Ce critère semble respecté sur le système réel vu qu'aucun dépassement n'es
 \end{corrige}
 \else
 \fi
+
+\ifprof
+\else
+\begin{marginfigure}
+\centering
+\includegraphics[width=3cm]{Cy_02_Ch_04_TD_02_qr}
+\end{marginfigure}
+\fi
+
+
 \ifprof
 \else
 \ifcolle
