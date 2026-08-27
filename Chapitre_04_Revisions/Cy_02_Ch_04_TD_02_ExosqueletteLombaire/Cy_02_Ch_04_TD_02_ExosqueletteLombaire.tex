@@ -40,6 +40,7 @@ Le schéma-blocs est donné dans la figure \ref{Cy_02_Ch_04_TD_02_fig_11}.
 \fi
 
 
+
 \subsection*{Réglage de la boucle d'asservissement de la vitesse angulaire du moteur}
 
 \ifprof
@@ -48,8 +49,10 @@ Le schéma-blocs décrivant la structure de l'asservissement de la vitesse angul
 
 \begin{figure}[!h]
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-10}
-\caption{Schéma-blocs de la boucle d'asservissement de la vitesse angulaire du moteur électrique \label{Cy_02_Ch_04_TD_02_fig_12}}
+\caption{Schéma-blocs de la boucle d'asservissement de la vitesse angulaire du moteur électrique} \label{Cy_02_Ch_04_TD_02_fig_12}
 \end{figure}
+
+
 
 \begin{table}[!h]
 \begin{tabular}{p{9cm}l}
@@ -61,7 +64,8 @@ Erreur en régime permanent pour une perturbation en échelon constante & Nulle 
 Pulsation de coupure à $0 \mathrm{~dB}$ & $\omega_{0 \mathrm{~dB}}=10 \mathrm{rad} \cdot \mathrm{s}^{-1}$ \\
 \hline
 \end{tabular}
-\caption{Critères concepteur pour la boucle d'asservissement de la vitesse angulaire \label{Cy_02_Ch_04_TD_02_tab_04}}
+%\caption{Critères concepteur pour la boucle d'asservissement de la vitesse angulaire}
+%\label{Cy_02_Ch_04_TD_02_tab_04}
 \end{table}
 
 Le choix d'un correcteur proportionnel intégral est fait afin de diminuer l'influence de la perturbation en couple modélisée par $C_{r}(p)$. La fonction de transfert du correcteur de la boucle d'asservissement en vitesse angulaire est noté $C_{v}(p)$, tel que $C_{v}(p)=K_{i} \frac{1+\tau_{i} p}{\tau_{i} p}$.
@@ -70,6 +74,7 @@ Le choix d'un correcteur proportionnel intégral est fait afin de diminuer l'inf
 On note $\indice{H}{BOv}(p)=\frac{\Omega_{m}(p)}{\varepsilon_{v}(p)}$ la fonction de transfert en boucle ouverte de l'asservissement de vitesse angulaire du moteur.
 
 \fi
+
 
 %Q 17. 
 \question{Déterminer l'expression littérale de la phase de $\indice{H}{BOv}(\mathrm{i} \omega)$. En déduire la valeur numérique de $\tau_{i}$ respectant les critères concepteur de la boucle de vitesse. \label{Cy_02_Ch_04_TD_02_q_17}}
@@ -98,7 +103,8 @@ Le diagramme de Bode de la boucle ouverte $H_{B O v}(p)$, avec $K_{i}=1$ et $\ta
 
 \begin{figure}[!h]
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-10(1)}
-\caption{Diagramme de Bode de $\indice{H}{BOv}(p)$ \label{Cy_02_Ch_04_TD_02_fig_13}}
+\caption{Diagramme de Bode de $\indice{H}{BOv}(p)$}
+ \label{Cy_02_Ch_04_TD_02_fig_13}
 \end{figure}
 \fi
 
@@ -153,7 +159,7 @@ Pour faciliter l'analyse des performances simulées, le schéma-blocs de la figu
 
 \begin{figure}[!h]
 \includegraphics[width=.6\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-11}
-\caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire -- Voir note suivante \label{Cy_02_Ch_04_TD_02_fig_15}}
+\caption{Schéma-blocs de l'asservissement de la force développée par un actionneur linéaire à retour unitaire -- Voir note suivante} \label{Cy_02_Ch_04_TD_02_fig_15}
 \end{figure}
 \fi
 \marginnote[.5cm]{Il y a vraissemblablement une erreur dans le sujet de base : sur la figure \ref{Cy_02_Ch_04_TD_02_fig_15}, $\varepsilon_f(p)$ devrait être en amont du bloc $C(p)$.}
@@ -194,7 +200,8 @@ $$
 \else
 Il est proposé dans cette section d'analyser les performances simulées de l'asservissement en force dont un extrait du cahier des charges est présenté dans le tableau~\ref{Cy_02_Ch_04_TD_02_tab_05}.
 
-\begin{table}[!h]
+%\begin{table}[!h]
+\begin{center}
 \begin{tabular}{llp{7cm}l}
 \hline
 \textbf{Id} & \textbf{Exigence} & \textbf{Critère} & \textbf{Niveau} \\
@@ -207,24 +214,31 @@ Id1.1 & Stabilité & Marge de phase & $\geqslant 60^{\circ}$ \\
 %\hline
 Id1.2 & Précision & Erreur en régime permanent pour une entrée en échelon & $<1 \%$ \\
 %\hline
-Id1.3 & Rapidité & Temps de réponse à 5\% pour une consigne en échelon de force de $40 \mathrm{~N}$ & $\operatorname{tr}_{5 \%}<1 \mathrm{~s}$ \\
+Id1.3 & Rapidité & Temps de réponse à 5\% pour une consigne en échelon de force de $\SI{40}{N}$ & 
+$\indice{tr}{5 \%}<\SI{1}{s}$ \\
 %\cline { 3 - 5 }
  &  & Vitesse maximale de montée de la force de traction & $100 \mathrm{~N} \cdot \mathrm{s}^{-1}$ \\
 \hline
 \end{tabular}
-\caption{Extrait du cahier des charges fonctionnel de l'actionneur linéaire sur le banc d'essai \label{Cy_02_Ch_04_TD_02_tab_05}}
-\end{table}
+\captionof{table}{Extrait du cahier des charges fonctionnel de l'actionneur linéaire sur le banc d'essai} 
+\label{Cy_02_Ch_04_TD_02_tab_05}
 
-\begin{figure}[!h]
-\includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12(1)}
-\caption{Diagramme de Bode de $H_{B O f}(p)$  \label{Cy_02_Ch_04_TD_02_fig_16}}
-\end{figure}
+\end{center}
+%\end{table}
 
 
 \begin{marginfigure}%[!h]
 \includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12}
 \caption{Réponses temporelles du modèle et expérimentale, pour une consigne en échelon de force de $40 \mathrm{~N}$ \label{Cy_02_Ch_04_TD_02_fig_17}}
 \end{marginfigure}
+
+\begin{figure}[!h]
+\includegraphics[width=\textwidth]{2024_03_20_0c3cf888f6e04b1986bcg-12(1)}
+\caption{Diagramme de Bode de $H_{B O f}(p)$} 
+ \label{Cy_02_Ch_04_TD_02_fig_16}
+\end{figure}
+
+
 
 On note $\indice{H}{BO f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}$ la fonction de transfert en boucle ouverte de l'asservissement en force développé par un actionneur linéaire. Dans un premier temps, le choix d'un correcteur proportionnel $C(p)=K_{\text {cor }}$ est réalisé. Le diagramme de Bode de la fonction de transfert $H_{B O f}(p)=\frac{F(p)}{\varepsilon_{f}(p)}=K_{\text {cor }} K_{10} G(p)$, avec $K_{\text {cor }}=1$ et la valeur de $\tau_{i}$ déterminée à la question \ref{Cy_02_Ch_04_TD_02_q_17} , est donné sur la figure \ref{Cy_02_Ch_04_TD_02_fig_16}.\\
 
