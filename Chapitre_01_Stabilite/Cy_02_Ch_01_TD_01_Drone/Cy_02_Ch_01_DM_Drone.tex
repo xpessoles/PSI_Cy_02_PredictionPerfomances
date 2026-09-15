@@ -250,7 +250,7 @@ Dans la suite, le gain de la fonction de transfert en boucle ouverte sera noté 
 La courbe de phase du diagramme de Bode de la fonction de transfert en boucle ouverte est représentée figure \ref{fig_07}, en gras avec un correcteur proportionnel ($T=0$) et en trait fin avec le correcteur retenu ($K=1$ et $T=0,2s$).
 
 
-\begin{marginfigure}[-10cm]
+\begin{marginfigure}%[-10cm]
 \includegraphics[width=\linewidth]{fig_07}
 \caption{Courbe de phase \label{fig_07}}
 \end{marginfigure}
@@ -316,7 +316,7 @@ La figure \ref{fig_08} représente la position des pôles de la fonction de tran
 complexe, pour la valeur du gain $K$ précédemment déterminée.
 
 
-\begin{marginfigure}[-12cm]
+\begin{marginfigure}%[-12cm]
 \includegraphics[width=\linewidth]{fig_08}
 \caption{Carte des pôles \label{fig_08}}
 \end{marginfigure}
@@ -331,7 +331,7 @@ Les pôles dominants sont $P2\simeq -15$, $P3 \simeq -5 +8i$, $P4\simeq -5 -8i$.
 \else
 \fi
 
-\begin{marginfigure}[-3cm]
+\begin{marginfigure}%[-3cm]
 \centering
 {\scriptsize
 %\includegraphics[width=\linewidth]{fig_02}
@@ -387,10 +387,10 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 %\begin{multicols}
 %\newpage
 
-\ifprof
-\else
-\ifcolle
-\else
+%\ifprof
+%\else
+%\ifcolle
+%\else
 %\marginnote[-12cm]{
 \begin{solution}
 \begin{enumerate}
@@ -413,13 +413,13 @@ fonction de transfert approchée de l’asservissement vertical du drone.}
 \end{enumerate}
 \end{solution} 
 %}
-\fi
-\fi
-
-\ifprof
-\else
-\begin{marginfigure}[-3cm]
-\centering
-\includegraphics[width=3cm]{Cy_02_Ch_01_TD_01_Drone_qr}
-\end{marginfigure}
-\fi
+%\fi
+%\fi
+%
+%\ifprof
+%\else
+%\begin{marginfigure}%[-3cm]
+%\centering
+%\includegraphics[width=3cm]{Cy_02_Ch_01_TD_01_Drone_qr}
+%\end{marginfigure}
+%\fi
