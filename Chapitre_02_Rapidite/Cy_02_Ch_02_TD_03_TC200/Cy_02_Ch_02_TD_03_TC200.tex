@@ -82,7 +82,7 @@ vitesse d’une des motorisations. Le modèle est considéré pour le moment non
 \hline
 Codeur et sa carte de traitement & $\indice{K}{cod}$ & $\SI{0,2}{V.s.rad^{-1}}$ \\
 Constante de couple & $K_t$ & $\SI{0,09}{N.m.A^{-1}}$ \\
-Correteur de type proportionnel & $C_2(p) = K_2 $ &  \\
+Correcteur de type proportionnel & $C_2(p) = K_2 $ & $K_2>0$ \\
 Dynamique de la motorisation & $H_2(p)=\dfrac{1}{\indice{J}{eq}p}$ & $\indice{J}{eq} = 1,5\times 10^{-3} \si{kg.m^2}$ \\
 \hline
 \end{tabular}
@@ -115,6 +115,9 @@ La FTBO est de la forme $\dfrac{\indice{K}{BO}}{p}$. C'est donc un intégrateur 
 \begin{corrige}
 En utilisant la question 1, on a $\tau = \dfrac{\indice{J}{eq}}{K_2K_t \indice{K}{cod}}$. On souhaite $t_{5\%} <  \SI{0,180}{s}$ soit $3 \dfrac{\indice{J}{eq}}{K_2K_t \indice{K}{cod}} < 0,180$. 
 En conséquence, $K_2  > 	\dfrac{3 \indice{J}{eq}}{0,180 \times K_t \indice{K}{cod}}$.
+
+AN : , $K_2  >\SI{1,4}{\Omega^{-1}}$.
+
 \end{corrige}
 \else
 \fi
