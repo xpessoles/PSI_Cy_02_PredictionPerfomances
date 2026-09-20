@@ -54,7 +54,7 @@ Le schéma-blocs décrivant la structure de l'asservissement de la vitesse angul
 
 
 
-\begin{table}[!h]
+\begin{center}%[!h]
 \begin{tabular}{p{9cm}l}
 \hline
 \textbf{Critère concepteur} & \textbf{Niveau} \\
@@ -64,9 +64,8 @@ Erreur en régime permanent pour une perturbation en échelon constante & Nulle 
 Pulsation de coupure à $0 \mathrm{~dB}$ & $\omega_{0 \mathrm{~dB}}=10 \mathrm{rad} \cdot \mathrm{s}^{-1}$ \\
 \hline
 \end{tabular}
-%\caption{Critères concepteur pour la boucle d'asservissement de la vitesse angulaire}
-%\label{Cy_02_Ch_04_TD_02_tab_04}
-\end{table}
+\captionof{table}{Critères concepteur pour la boucle d'asservissement de la vitesse angulaire\label{Cy_02_Ch_04_TD_02_tab_04}}
+\end{center}
 
 Le choix d'un correcteur proportionnel intégral est fait afin de diminuer l'influence de la perturbation en couple modélisée par $C_{r}(p)$. La fonction de transfert du correcteur de la boucle d'asservissement en vitesse angulaire est noté $C_{v}(p)$, tel que $C_{v}(p)=K_{i} \frac{1+\tau_{i} p}{\tau_{i} p}$.
 
